@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DashboardFormContext" prefHeight="680.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
+   <children>
+      <Label layoutY="106.0" prefHeight="555.0" prefWidth="80.0" styleClass="dashboard_label2" stylesheets="@../styles/styles.css" />
+      <Label prefHeight="60.0" prefWidth="980.0" style="-fx-background-color: #901cfb;" styleClass="dashboard_label" stylesheets="@../styles/styles.css" />
+      <JFXButton buttonType="RAISED" layoutX="400.0" layoutY="10.0" onAction="#btnCustomer" pickOnBounds="false" styleClass="btn1" stylesheets="@../styles/styles.css" text="Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="2.0" layoutY="132.0" onAction="#btnHome" prefHeight="71.0" prefWidth="73.0" text="Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-home-page-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane fx:id="AllContext" layoutX="80.0" layoutY="60.0" pickOnBounds="false" prefHeight="620.0" prefWidth="900.0" />
+      <JFXButton buttonType="RAISED" layoutX="270.0" layoutY="10.0" onAction="#btnEmployee" text="Employee" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="151.0" layoutY="10.0" onAction="#btnSupplier" text="Supplier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="80.0" fitWidth="101.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/output-onlinepngtools.png" />
+         </image>
+      </ImageView>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="2.0" layoutY="538.0" onAction="#btnLogout" prefHeight="71.0" prefWidth="73.0" text="Logout" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/LOGOUT.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="-4.0" layoutY="218.0" onAction="#btnReports" prefHeight="71.0" prefWidth="80.0" text="Repots" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-combo-chart-30%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutY="305.0" onAction="#btnPayment" prefHeight="71.0" prefWidth="80.0" text="Payment" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-cash-register-50%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
