@@ -2,6 +2,12 @@
 -fx-background-color :#be2edd;
 }
 
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip,
+.wrapper .icon:hover .tooltip:before{
+-fx-background-color :#393351;
+    }
+
 
 
 .button1

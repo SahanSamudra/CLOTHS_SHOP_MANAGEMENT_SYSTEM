@@ -54,7 +54,7 @@
             <Image url="@../img/output-onlinepngtools.png" />
          </image>
       </ImageView>
-      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="2.0" layoutY="538.0" onAction="#btnLogout" prefHeight="71.0" prefWidth="73.0" text="Logout" textFill="WHITE">
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="3.0" layoutY="567.0" onAction="#btnLogout" prefHeight="71.0" prefWidth="73.0" text="Logout" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -86,6 +86,30 @@
             <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-cash-register-50%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="-4.0" layoutY="392.0" onAction="#btnReturn" prefHeight="71.0" prefWidth="80.0" text="Return" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-return-purchase-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleRole="IMAGE_VIEW" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="1.0" layoutY="480.0" onAction="#btnReturn" prefHeight="71.0" prefWidth="80.0" text="Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-order-64.png" />
                </image>
             </ImageView>
          </graphic>
