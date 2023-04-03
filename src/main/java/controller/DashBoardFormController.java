@@ -50,12 +50,60 @@ public class DashBoardFormController {
 
     }
 
-    public void btnPayment(ActionEvent actionEvent) {
+    public void btnPayment(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/PaymentForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
     }
 
-    public void btnSupplier(ActionEvent actionEvent) {
+    public void btnSupplier(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/SupplierForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
     }
 
-    public void btnEmployee(ActionEvent actionEvent) {
+    public void btnEmployee(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/EmployeeForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
+    }
+
+    public void btnItem(ActionEvent actionEvent) throws IOException {
+
+        URL resource = getClass().getResource("../view/ItemForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
+    }
+
+    public void btnOrder(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/OrderForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
+    }
+
+    public void btnReturn(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ReturnForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
+    }
+
+    public void btnReports(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ReportForm.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        AllContext.getChildren().clear();
+        AllContext.getChildren().add(load);
     }
 }
