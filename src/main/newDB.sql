@@ -1,0 +1,16 @@
+DROP DATABASE IF EXISTS Shalini_Fashion;
+CREATE DATABASE IF NOT EXISTS Shalini_Fashion;
+SHOW DATABASES;
+USE Shalini_Fashion;
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer
+(
+    cid     VARCHAR(10) NOT NULL,
+    name    VARCHAR(45),
+    address VARCHAR(75),
+    contact VARCHAR(12),
+    CONSTRAINT PRIMARY KEY (cid)
+    );
+SHOW TABLES;
+DESCRIBE Customer;

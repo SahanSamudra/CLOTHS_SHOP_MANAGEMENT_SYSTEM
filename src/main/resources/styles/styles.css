@@ -9,6 +9,45 @@
     }
 
 
+.DBlABEL
+{
+
+    -fx-background-radius :  15 15 15 15;
+}
+
+.DBLabel1
+{
+   -fx-background-color :linear-gradient(to top left, #ff0000 , #ffa150);
+    -fx-background-radius :  15 15 15 15;
+}
+
+.DBLabel2
+{
+   -fx-background-color :linear-gradient(to top left, #000bff , #73ddff );
+    -fx-background-radius :  15 15 15 15;
+}
+.DBLabel3
+{
+   -fx-background-color :linear-gradient(to top left,#009432 , #ffe15c  );
+    -fx-background-radius :  15 15 15 15;
+}
+.DBLabel4
+{
+   -fx-background-color :linear-gradient(to top left,     #901cfb , #f18f8f );
+    -fx-background-radius :  15 15 15 15;
+}
+.DBLabel5
+{
+   -fx-background-color :linear-gradient(to top left,   #f7b731 ,#f18f8f );
+    -fx-background-radius :  15 15 15 15;
+}
+.DBLabel6
+{
+   -fx-background-color :linear-gradient(to top left,   #17c0eb, #f18f8f );
+    -fx-background-radius :  15 15 15 15;
+}
+
+
 
 .button1
 {
