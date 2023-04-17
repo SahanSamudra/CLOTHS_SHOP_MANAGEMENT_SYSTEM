@@ -15,6 +15,12 @@
     -fx-background-radius :  15 15 15 15;
 }
 
+.NewSave_colour2
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+     -fx-background-radius :  30 30 30 30;
+}
+
 .DBLabel1
 {
    -fx-background-color :linear-gradient(to top left, #ff0000 , #ffa150);

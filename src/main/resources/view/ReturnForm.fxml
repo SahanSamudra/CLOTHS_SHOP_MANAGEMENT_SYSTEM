@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReturnFormController">
+<AnchorPane prefHeight="620.0" prefWidth="900.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReturnFormController">
    <children>
-      <Label layoutX="33.0" layoutY="24.0" prefHeight="46.0" prefWidth="122.0" text="Return">
+      <Label layoutX="35.0" layoutY="10.0" prefHeight="53.0" prefWidth="140.0" text="Return">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <Glow />
+               </input>
+            </InnerShadow>
+         </effect>
       </Label>
+      <TableView fx:id="tblReturn" layoutX="25.0" layoutY="326.0" prefHeight="254.0" prefWidth="865.0">
+         <columns>
+            <TableColumn fx:id="colReturnID" prefWidth="115.0" text="Return ID" />
+            <TableColumn fx:id="colItemCodeR" prefWidth="160.0" text="Item Code" />
+            <TableColumn fx:id="colBilingDateR" prefWidth="264.0" text="Billing Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="149.0" text="Return Date" />
+            <TableColumn fx:id="colWarrantyDueR" prefWidth="213.0" text="Price" />
+         </columns>
+      </TableView>
+      <JFXTextField labelFloat="true" layoutX="51.0" layoutY="99.0" promptText="Return ID" />
+      <JFXTextField layoutX="51.0" layoutY="176.0" />
+      <JFXTextField labelFloat="true" layoutX="458.0" layoutY="99.0" promptText="Price" />
+      <JFXTextField layoutX="458.0" layoutY="176.0" promptText="Item Code" />
+      <JFXTextField labelFloat="true" layoutX="259.0" layoutY="99.0" promptText="Item Code" />
+      <JFXTextField layoutX="259.0" layoutY="176.0" promptText="Item Code" />
    </children>
 </AnchorPane>

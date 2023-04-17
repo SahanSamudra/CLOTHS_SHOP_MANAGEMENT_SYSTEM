@@ -31,7 +31,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="36.0" prefHeight="46.0" prefWidth="122.0" text="Home">
+      <Label layoutX="35.0" prefHeight="46.0" prefWidth="122.0" text="Home">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
@@ -172,6 +172,6 @@
             <Image url="@../img/icons8-return-purchase-50.png" />
          </image>
       </ImageView>
-      <Line endX="-4.5" endY="572.0" layoutX="14.0" layoutY="28.0" startX="-4.5" startY="25.0" />
+      <Line endX="-4.5" endY="575.0" layoutX="10.0" layoutY="25.0" startX="-4.5" startY="25.0" />
    </children>
 </AnchorPane>

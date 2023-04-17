@@ -32,10 +32,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <AnchorPane fx:id="AllContext" layoutX="80.0" layoutY="60.0" pickOnBounds="false" prefHeight="620.0" prefWidth="900.0">
-         <children>
-            <Label layoutX="203.0" layoutY="150.0" prefHeight="80.0" prefWidth="68.0" text="Label" />
-         </children></AnchorPane>
+      <AnchorPane fx:id="AllContext" layoutX="80.0" layoutY="60.0" pickOnBounds="false" prefHeight="620.0" prefWidth="900.0" />
       <JFXButton buttonType="RAISED" layoutX="312.0" layoutY="9.0" onAction="#btnEmployee" text="Employee" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />

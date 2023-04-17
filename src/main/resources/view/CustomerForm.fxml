@@ -56,7 +56,7 @@
          </styleClass>
       </JFXButton>
       <Line endX="-4.5" endY="575.0" layoutX="10.0" layoutY="35.0" startX="-4.5" startY="25.0" />
-      <Button fx:id="btnSave" layoutX="550.0" layoutY="244.0" mnemonicParsing="false" onAction="#btnCustomerSave" prefHeight="39.0" prefWidth="100.0" styleClass="dashboard-colour2" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
+      <Button fx:id="btnSave" layoutX="771.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnCustomerSave" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -66,8 +66,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="button4" />
+         </styleClass>
       </Button>
-      <Button layoutX="662.0" layoutY="244.0" mnemonicParsing="false" onAction="#btnCustomerUpdate" prefHeight="39.0" prefWidth="100.0" styleClass="btn-Update" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Update" textFill="WHITE">
+      <Button layoutX="663.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnCustomerUpdate" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -77,8 +81,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="btn-Update" />
+            <String fx:value="button4" />
+         </styleClass>
       </Button>
-      <Button layoutX="771.0" layoutY="244.0" mnemonicParsing="false" onAction="#btnCustomerDelete" prefHeight="31.0" prefWidth="100.0" styleClass="btn-Delete" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Delete" textFill="WHITE">
+      <Button layoutX="555.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnCustomerDelete" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Delete" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
@@ -88,6 +96,10 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="btn-Delete" />
+            <String fx:value="button4" />
+         </styleClass>
       </Button>
    </children>
 </AnchorPane>

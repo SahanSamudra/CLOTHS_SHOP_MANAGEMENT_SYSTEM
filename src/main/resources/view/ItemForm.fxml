@@ -1,16 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemFormController">
+<AnchorPane fx:id="ItemContext" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemFormController">
    <children>
-      <Label layoutX="33.0" layoutY="24.0" prefHeight="46.0" prefWidth="122.0" text="Item">
+      <Label layoutX="35.0" layoutY="10.0" prefHeight="53.0" prefWidth="96.0" text="Item">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <Glow />
+               </input>
+            </InnerShadow>
+         </effect>
       </Label>
+      <Label layoutX="18.0" layoutY="65.0" prefHeight="232.0" prefWidth="872.0" style="-fx-background-color: #f5f6fa;" styleClass="button4" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <TableView fx:id="tblItems" layoutX="18.0" layoutY="310.0" prefHeight="295.0" prefWidth="872.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+         <columns>
+            <TableColumn fx:id="colItemId" prefWidth="113.0" text="Item ID" />
+            <TableColumn fx:id="colItemType" prefWidth="145.0" text="Type" />
+            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="102.0" text="Size" />
+            <TableColumn fx:id="colPrice" prefWidth="128.0" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="129.0" text="Qty" />
+            <TableColumn fx:id="colDate" prefWidth="110.0" text="Date" />
+            <TableColumn fx:id="colSupplier" prefWidth="1055.0" text="Supplier" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="524.0" layoutY="123.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Size" />
+      <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="35.0" layoutY="182.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Price" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="524.0" layoutY="182.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Qty" />
+      <JFXTextField fx:id="txtItemId" labelFloat="true" layoutX="253.0" layoutY="79.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Item Id" />
+      <JFXButton layoutX="553.0" layoutY="79.0" onAction="#btnSearchItem" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn-Search" />
+            <String fx:value="button-" />
+         </styleClass>
+      </JFXButton>
+      <Line endX="-4.5" endY="575.0" layoutX="10.0" layoutY="35.0" startX="-4.5" startY="25.0" />
+      <JFXComboBox fx:id="cmbType" labelFloat="true" layoutX="35.0" layoutY="131.0" prefHeight="31.0" prefWidth="291.0" promptText="Type" />
+      <JFXComboBox fx:id="cmbSupplier" layoutX="524.0" layoutY="244.0" prefHeight="31.0" prefWidth="291.0" promptText="Supplier" />
+      <Button fx:id="btnSave" layoutX="649.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnItemSave" prefHeight="39.0" prefWidth="230.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Genarate Barcodes &amp; Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="button4" />
+         </styleClass>
+      </Button>
+      <Button layoutX="544.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnItemUpdate" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="btn-Update" />
+            <String fx:value="button4" />
+         </styleClass>
+      </Button>
+      <Button layoutX="434.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnItemDelete" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Delete" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="btn-Delete" />
+            <String fx:value="button4" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

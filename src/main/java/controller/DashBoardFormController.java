@@ -64,7 +64,7 @@ public class DashBoardFormController {
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
         AllContext.getChildren().add(load);
-    }
+   }
 
     public void btnEmployee(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("../view/EmployeeForm.fxml");

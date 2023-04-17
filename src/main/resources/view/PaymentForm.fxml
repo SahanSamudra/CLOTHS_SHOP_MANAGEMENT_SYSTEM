@@ -1,15 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaymentFormController">
    <children>
-      <Label layoutX="33.0" layoutY="24.0" prefHeight="46.0" prefWidth="122.0" text="Payement">
+      <Label layoutX="35.0" layoutY="10.0" prefHeight="53.0" prefWidth="165.0" text="Payment">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <Glow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Label>
+      <Label layoutX="18.0" layoutY="65.0" prefHeight="232.0" prefWidth="872.0" style="-fx-background-color: #f5f6fa;" styleClass="button4" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" wrapText="true">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <TableView fx:id="tblItems" layoutX="18.0" layoutY="310.0" prefHeight="295.0" prefWidth="872.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+         <columns>
+            <TableColumn fx:id="colItemId" prefWidth="113.0" text="Item ID" />
+            <TableColumn fx:id="colItemType" prefWidth="145.0" text="Type" />
+            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="102.0" text="Size" />
+            <TableColumn fx:id="colPrice" prefWidth="128.0" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="129.0" text="Qty" />
+            <TableColumn fx:id="colDate" prefWidth="110.0" text="Date" />
+            <TableColumn fx:id="colSupplier" prefWidth="1055.0" text="Total" />
+         </columns>
+      </TableView>
+      <Line endX="-4.5" endY="575.0" layoutX="10.0" layoutY="35.0" startX="-4.5" startY="25.0" />
+      <Label fx:id="lblDate" layoutX="93.0" layoutY="71.0" prefHeight="30.0" prefWidth="119.0" text=" 2021-09-30">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="292.0" layoutY="71.0" prefHeight="30.0" prefWidth="84.0" text=" 08.35">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="22.0" prefHeight="30.0" prefWidth="138.0" text="Payment ID :">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="71.0" prefHeight="30.0" prefWidth="69.0" text="Date :">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="230.0" layoutY="71.0" prefHeight="30.0" prefWidth="69.0" text="Time :">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="788.0" layoutY="22.0" prefHeight="30.0" prefWidth="91.0" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField labelFloat="true" layoutX="70.0" layoutY="126.0" promptText="ItemId" />
+      <JFXTextField labelFloat="true" layoutX="272.0" layoutY="191.0" promptText="Price" />
+      <JFXTextField labelFloat="true" layoutX="68.0" layoutY="191.0" promptText="Size" />
+      <JFXTextField labelFloat="true" layoutX="272.0" layoutY="126.0" promptText="Type" />
+      <JFXTextField labelFloat="true" layoutX="473.0" layoutY="191.0" promptText="Qty" />
+      <JFXTextField labelFloat="true" layoutX="473.0" layoutY="126.0" promptText="Type" />
+      <Label fx:id="lblDate1" layoutX="-205.0" layoutY="101.0" prefHeight="30.0" prefWidth="119.0" text=" 2021-09-30" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="645.0" layoutY="68.0" prefHeight="226.0" prefWidth="243.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="button-" />
+         </styleClass>
+      </Label>
+      <Label layoutX="-186.0" layoutY="66.0" prefHeight="30.0" prefWidth="138.0" text="Payment ID :" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="-268.0" layoutY="101.0" prefHeight="30.0" prefWidth="69.0" text="Date :" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="660.0" layoutY="94.0" prefHeight="35.0" prefWidth="125.0" text="Item Count : " textFill="#e5ff00">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="663.0" layoutY="127.0" prefHeight="30.0" prefWidth="125.0" text="Disccount   :" textFill="#e5ff00">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="715.0" layoutY="64.0" prefHeight="30.0" prefWidth="102.0" text="Total " textFill="#ffdf00">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="712.0" layoutY="153.0" prefHeight="30.0" prefWidth="91.0" text="Total  " textFill="#ffdf00">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="716.0" layoutY="174.0" prefHeight="30.0" prefWidth="84.0" text="with" textFill="#ffdf00">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="699.0" layoutY="197.0" prefHeight="30.0" prefWidth="119.0" text="Discount" textFill="#ffdf00">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="665.0" layoutY="230.0" prefHeight="45.0" prefWidth="69.0" text="RS :  " textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblItemCount" layoutX="772.0" layoutY="99.0" prefHeight="30.0" prefWidth="69.0" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDiscount" layoutX="766.0" layoutY="129.0" prefHeight="30.0" prefWidth="69.0" text="        % " textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFinalTotal" layoutX="727.0" layoutY="230.0" prefHeight="45.0" prefWidth="146.0" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId1" layoutX="-62.0" layoutY="66.0" prefHeight="30.0" prefWidth="91.0" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
    </children>
