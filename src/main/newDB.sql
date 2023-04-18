@@ -29,3 +29,19 @@ CREATE TABLE IF NOT EXISTS Supplier
     );
 SHOW TABLES;
 DESCRIBE Supplier;
+
+
+
+DROP TABLE IF EXISTS Employee;
+CREATE TABLE IF NOT EXISTS Employee
+(
+    eId VARCHAR(10),
+    eName VARCHAR (45),
+    NIC VARCHAR(25),
+    eAddress VARCHAR(12),
+    salary DOUBLE DEFAULT 0.00,
+    eContact VARCHAR (15),
+    CONSTRAINT PRIMARY KEY (eId)
+    );
+SHOW TABLES;
+DESCRIBE Employee;

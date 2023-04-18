@@ -45,7 +45,7 @@
       <JFXTextField fx:id="txtENIC" labelFloat="true" layoutX="66.0" layoutY="169.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="NIC" />
       <JFXTextField fx:id="txtEAddress" labelFloat="true" layoutX="569.0" layoutY="169.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Address" />
       <JFXTextField fx:id="txtEContact" labelFloat="true" layoutX="569.0" layoutY="225.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Contact" />
-      <JFXTextField fx:id="txtEId" labelFloat="true" layoutX="66.0" layoutY="96.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Employee Id" />
+      <JFXTextField fx:id="txtEId" labelFloat="true" layoutX="61.0" layoutY="96.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Employee Id" />
       <JFXTextField fx:id="txtSallary" labelFloat="true" layoutX="66.0" layoutY="225.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Sallary" />
       <Button fx:id="btnSave" layoutX="771.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnSaveEmployee" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
          <font>

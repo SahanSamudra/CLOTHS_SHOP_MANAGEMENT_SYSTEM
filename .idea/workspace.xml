@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update EmployeeForm.fxml" />
+    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update EmployeeForm.fxml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/newDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/newDB.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/SSP'S PC/Downloads/Pharmacy_Management_System",
+    "last_opened_file_path": "C:/Users/SSP'S PC/Downloads/CLOTHS_SHOP_MANAGEMENT_SYSTEM",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -57,6 +62,10 @@
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\FORGOT" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\password" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tm" />
+      <recent name="model" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.CLOTHS_SHOP_MANAGEMENT_SYSTEM [javafx:run]">
@@ -162,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681806830987</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update EmployeeForm.fxml">
+      <created>1681806893523</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681806893523</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
