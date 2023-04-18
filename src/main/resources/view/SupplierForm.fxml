@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierFormController">
+<AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierController">
    <children>
       <Label layoutX="35.0" layoutY="10.0" prefHeight="53.0" prefWidth="146.0" text="Supplier">
          <font>
@@ -38,16 +38,16 @@
             <TableColumn fx:id="colSCompany" prefWidth="408.0" text="Company" />
          </columns>
       </TableView>
-      <Label layoutX="20.0" layoutY="63.0" prefHeight="232.0" prefWidth="872.0" style="-fx-background-color: #f5f6fa;" styleClass="button4" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+      <Label layoutX="14.0" layoutY="69.0" prefHeight="232.0" prefWidth="872.0" style="-fx-background-color: #f5f6fa;" styleClass="button4" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <JFXTextField fx:id="txtSupName" labelFloat="true" layoutX="66.0" layoutY="169.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Name" />
-      <JFXTextField fx:id="txtSupAddress" labelFloat="true" layoutX="569.0" layoutY="169.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Address" />
-      <JFXTextField fx:id="txtSupContact" labelFloat="true" layoutX="569.0" layoutY="225.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Contact" />
-      <JFXTextField fx:id="txtSupID" labelFloat="true" layoutX="66.0" layoutY="96.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Supplier Id" />
-      <JFXButton layoutX="372.0" layoutY="96.0" onAction="#btnSearch" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
+      <JFXTextField fx:id="txtSName" labelFloat="true" layoutX="66.0" layoutY="169.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Name" />
+      <JFXTextField fx:id="txtSAddress" labelFloat="true" layoutX="569.0" layoutY="169.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Address" />
+      <JFXTextField fx:id="txtSContact" labelFloat="true" layoutX="569.0" layoutY="225.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Contact" />
+      <JFXTextField fx:id="txtSId" labelFloat="true" layoutX="66.0" layoutY="96.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Supplier Id" />
+      <JFXButton layoutX="372.0" layoutY="96.0" onAction="#btnSearchCus" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -56,8 +56,8 @@
             <String fx:value="button-" />
          </styleClass>
       </JFXButton>
-      <JFXTextField fx:id="txtSupNIC" labelFloat="true" layoutX="66.0" layoutY="225.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="NIC" />
-      <Button layoutX="771.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnSave" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
+      <JFXTextField fx:id="txtSNic" labelFloat="true" layoutX="66.0" layoutY="225.0" onKeyPressed="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="NIC" />
+      <Button fx:id="btnSave" layoutX="771.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnSupplierSave" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -72,7 +72,7 @@
             <String fx:value="button4" />
          </styleClass>
       </Button>
-      <Button layoutX="663.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnUpdate" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Update" textFill="WHITE">
+      <Button layoutX="663.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnUpdateSupplier" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -87,7 +87,7 @@
             <String fx:value="button4" />
          </styleClass>
       </Button>
-      <Button layoutX="555.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnDelete" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Delete" textFill="WHITE">
+      <Button layoutX="555.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnDeleteSupplier" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Delete" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
@@ -102,5 +102,6 @@
             <String fx:value="button4" />
          </styleClass>
       </Button>
+      <JFXTextField fx:id="txtSCompany" labelFloat="true" layoutX="569.0" layoutY="96.0" onKeyReleased="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Company" />
    </children>
 </AnchorPane>

@@ -14,3 +14,18 @@ CREATE TABLE IF NOT EXISTS Customer
     );
 SHOW TABLES;
 DESCRIBE Customer;
+
+
+DROP TABLE IF EXISTS Supplier;
+CREATE TABLE IF NOT EXISTS Supplier
+(
+    sid VARCHAR(10) not null,
+    snic VARCHAR (45),
+    sname VARCHAR(45),
+    scontact VARCHAR(12),
+    saddress VARCHAR (75),
+    scompany VARCHAR (45),
+    CONSTRAINT PRIMARY KEY (sid)
+    );
+SHOW TABLES;
+DESCRIBE Supplier;
