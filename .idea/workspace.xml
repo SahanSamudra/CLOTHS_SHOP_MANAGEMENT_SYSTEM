@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Connect DataBase and Complete CustomerForm.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ReportController.java" afterDir="false" />
+    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="SupplierForm.fxml CRUD Complete.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReportFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/newDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/newDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ReportForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ReportForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681735628044</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="SupplierForm.fxml CRUD Complete.">
+      <created>1681792769698</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681792769698</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -179,7 +179,8 @@
     <MESSAGE value="Creating DashBoardForm.fxml" />
     <MESSAGE value="Dashboard Navigation Complete" />
     <MESSAGE value="Connect DataBase and Complete CustomerForm.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connect DataBase and Complete CustomerForm.fxml" />
+    <MESSAGE value="SupplierForm.fxml CRUD Complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupplierForm.fxml CRUD Complete." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
