@@ -35,22 +35,21 @@
             <DropShadow />
          </effect>
       </Label>
-      <TableView fx:id="tblItems" layoutX="18.0" layoutY="310.0" prefHeight="295.0" prefWidth="872.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+      <TableView fx:id="tblItems" layoutX="18.0" layoutY="310.0" prefHeight="295.0" prefWidth="872.0" stylesheets="@../styles/styles.css">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="113.0" text="Item ID" />
             <TableColumn fx:id="colItemType" prefWidth="145.0" text="Type" />
             <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="102.0" text="Size" />
             <TableColumn fx:id="colPrice" prefWidth="128.0" text="Price" />
             <TableColumn fx:id="colQty" prefWidth="129.0" text="Qty" />
-            <TableColumn fx:id="colDate" prefWidth="110.0" text="Date" />
             <TableColumn fx:id="colSupplier" prefWidth="1055.0" text="Supplier" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="524.0" layoutY="123.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Size" />
+      <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="35.0" layoutY="244.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Size" />
       <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="35.0" layoutY="182.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Price" />
       <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="524.0" layoutY="182.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Qty" />
-      <JFXTextField fx:id="txtItemId" labelFloat="true" layoutX="253.0" layoutY="79.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Item Id" />
-      <JFXButton layoutX="553.0" layoutY="79.0" onAction="#btnSearchItem" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
+      <JFXTextField fx:id="txtItemId" labelFloat="true" layoutX="35.0" layoutY="129.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Item Id" />
+      <JFXButton layoutX="334.0" layoutY="129.0" onAction="#btnSearchItem" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -60,8 +59,8 @@
          </styleClass>
       </JFXButton>
       <Line endX="-4.5" endY="575.0" layoutX="10.0" layoutY="35.0" startX="-4.5" startY="25.0" />
-      <JFXComboBox fx:id="cmbType" labelFloat="true" layoutX="35.0" layoutY="131.0" prefHeight="31.0" prefWidth="291.0" promptText="Type" />
-      <JFXComboBox fx:id="cmbSupplier" layoutX="524.0" layoutY="244.0" prefHeight="31.0" prefWidth="291.0" promptText="Supplier" />
+      <JFXComboBox fx:id="cmbType" labelFloat="true" layoutX="524.0" layoutY="129.0" onAction="#cmbTypeO" prefHeight="31.0" prefWidth="291.0" promptText="Type" />
+      <JFXComboBox fx:id="cmbSupplier" layoutX="524.0" layoutY="244.0" onAction="#cmbSupplier0" prefHeight="31.0" prefWidth="291.0" promptText="Supplier" />
       <Button fx:id="btnSave" layoutX="649.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnItemSave" prefHeight="39.0" prefWidth="230.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Genarate Barcodes &amp; Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />

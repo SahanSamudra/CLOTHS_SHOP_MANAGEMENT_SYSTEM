@@ -30,7 +30,7 @@ public class LoginFormController {
         String password = "1";
         if (UserName.getText().equals(user) && Password.getText().equals(password)) {
             Stage window = (Stage) LoginFormContext.getScene().getWindow();
-            window.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashBoardForm.fxml"))));
+            window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"))));
             window.centerOnScreen();
         } else if (UserName.getText().isEmpty() && Password.getText().isEmpty()) {
             lblError.setText("Your User Name Or Password IS Empty...!");

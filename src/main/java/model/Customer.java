@@ -9,6 +9,7 @@ public class Customer {
     public Customer() {
     }
 
+
     public Customer(String customerId, String customerName, String customerAddress, String noOfContact) {
         this.customerId = customerId;
         this.customerName = customerName;

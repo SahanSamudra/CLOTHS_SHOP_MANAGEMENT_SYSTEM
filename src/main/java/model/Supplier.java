@@ -1,5 +1,12 @@
 package model;
 
+import util.CrudUtil;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Supplier {
 
     private String sid;
@@ -20,6 +27,17 @@ public class Supplier {
         this.address = address;
         this.company = company;
     }
+
+    public static List<String> searchSupplierId() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT sid FROM Supplier";
+        List<String> supplierId = new ArrayList<>();
+        ResultSet resultSet = CrudUtil.execute(sql);
+        while (resultSet.next()){
+            supplierId.add(resultSet.getString(1));
+        }
+        return supplierId;
+    }
+
 
     public String getSid() {
         return sid;

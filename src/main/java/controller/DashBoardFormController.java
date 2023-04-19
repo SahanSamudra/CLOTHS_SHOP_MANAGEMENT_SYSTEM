@@ -42,7 +42,7 @@ public class DashBoardFormController {
 
 
     public void home() throws IOException {
-        URL resource = getClass().getResource("../view/DisplayHome.fxml");
+        URL resource = getClass().getResource("/view/DisplayHome.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -51,7 +51,7 @@ public class DashBoardFormController {
     }
 
     public void btnPayment(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/PaymentForm.fxml");
+        URL resource = getClass().getResource("/view/PaymentForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -59,7 +59,7 @@ public class DashBoardFormController {
     }
 
     public void btnSupplier(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/SupplierForm.fxml");
+        URL resource = getClass().getResource("/view/SupplierForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -67,7 +67,7 @@ public class DashBoardFormController {
    }
 
     public void btnEmployee(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/EmployeeForm.fxml");
+        URL resource = getClass().getResource("/view/EmployeeForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -76,7 +76,7 @@ public class DashBoardFormController {
 
     public void btnItem(ActionEvent actionEvent) throws IOException {
 
-        URL resource = getClass().getResource("../view/ItemForm.fxml");
+        URL resource = getClass().getResource("/view/ItemForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -84,7 +84,7 @@ public class DashBoardFormController {
     }
 
     public void btnOrder(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/OrderForm.fxml");
+        URL resource = getClass().getResource("/view/OrderForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -92,7 +92,7 @@ public class DashBoardFormController {
     }
 
     public void btnReturn(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/ReturnForm.fxml");
+        URL resource = getClass().getResource("/view/ReturnForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();
@@ -100,7 +100,7 @@ public class DashBoardFormController {
     }
 
     public void btnReports(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/ReportForm.fxml");
+        URL resource = getClass().getResource("/view/ReportForm.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         AllContext.getChildren().clear();

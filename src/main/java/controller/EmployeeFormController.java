@@ -36,6 +36,7 @@ public class EmployeeFormController implements Initializable {
     public TableColumn colEAddress;
     public TableColumn colESallary;
     public TableColumn colEContact;
+    public Button btnSaveEmployee;
 
 
     @Override
