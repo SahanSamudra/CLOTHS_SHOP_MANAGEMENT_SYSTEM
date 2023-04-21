@@ -4,30 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update EmployeeForm.fxml">
+    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update ItemForm.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerSaveController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DashBoardFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DisplayHomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrderFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReportController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierSaveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB.SQL" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB.SQL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tm/ItemTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tm/ItemTm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tm/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tm/ItemTm.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/newDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/newDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/OrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OrderForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
@@ -55,7 +46,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2N5DrwmxL6vqrq1xVnafLJTRAht" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -65,22 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/SSP'S PC/Downloads/CLOTHS_SHOP_MANAGEMENT_SYSTEM",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SSP'S PC/Documents/NEW NLDB/NLDB_FARM_Manage_System/NLDB_FARM_Manage_System&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java\model" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\styles" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources" />
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img" />
@@ -88,6 +81,9 @@
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\FORGOT" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\password" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img\user" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="tm" />
@@ -105,7 +101,22 @@
     <configuration name="CLOTHS_SHOP_MANAGEMENT_SYSTEM [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map />
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
             <option name="profiles">
@@ -211,7 +222,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681832729567</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update ItemForm.fxml">
+      <created>1681935648231</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681935648231</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update ItemForm.fxml">
+      <created>1681935679194</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681935679194</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -235,7 +260,8 @@
     <MESSAGE value="Connect DataBase and Complete CustomerForm.fxml" />
     <MESSAGE value="SupplierForm.fxml CRUD Complete." />
     <MESSAGE value="Update EmployeeForm.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update EmployeeForm.fxml" />
+    <MESSAGE value="Update ItemForm.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ItemForm.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

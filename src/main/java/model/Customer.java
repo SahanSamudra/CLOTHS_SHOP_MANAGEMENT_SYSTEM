@@ -9,7 +9,6 @@ public class Customer {
     public Customer() {
     }
 
-
     public Customer(String customerId, String customerName, String customerAddress, String noOfContact) {
         this.customerId = customerId;
         this.customerName = customerName;
@@ -47,5 +46,15 @@ public class Customer {
 
     public void setNoOfContact(String noOfContact) {
         this.noOfContact = noOfContact;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId='" + customerId + '\'' +
+                ", customerName='" + customerName + '\'' +
+                ", customerAddress='" + customerAddress + '\'' +
+                ", noOfContact='" + noOfContact + '\'' +
+                '}';
     }
 }

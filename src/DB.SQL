@@ -120,7 +120,7 @@ CREATE TABLE Order_Detail(
    CONSTRAINT FOREIGN KEY (Item_Code) REFERENCES Item(Item_Code) ON DELETE CASCADE ON UPDATE CASCADE
 );
 SHOW TABLES ;
-DESCRIBE Order_Detail;
+DESCRIBE Order_Detail;
 
 #------------------------------------------------------------------------------------------
 
@@ -132,6 +132,9 @@ CREATE TABLE ReturnItem(
 	OrderId 		VARCHAR(10),
 	CONSTRAINT FOREIGN KEY(OrderId) REFERENCES Orders(OrderId)
 );
+
+
+
 
 
 

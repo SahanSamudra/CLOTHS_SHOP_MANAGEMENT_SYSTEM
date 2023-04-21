@@ -20,6 +20,7 @@ public class ReturnFormController {
     public JFXTextField txtItemId;
     public Button btnSave;
     public JFXDatePicker BillingD;
+    public JFXDatePicker dpReturnDate;
 
     public void txtKeyPress(KeyEvent keyEvent) {
     }

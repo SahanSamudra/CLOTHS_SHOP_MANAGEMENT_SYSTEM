@@ -54,10 +54,68 @@ DROP TABLE IF EXISTS Employee;
                      type VARCHAR(25),
                      price DOUBLE,
                      qty INT,
-                     size VARCHAR(10),
+                     size  VARCHAR(10),
                      supplier VARCHAR(25),
+                     tcost DOUBLE,
                       CONSTRAINT PRIMARY KEY (Iid)
 
                       );
                       SHOW TABLES;
                                         DESCRIBE Item;
+
+
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE IF NOT EXISTS Orders(
+
+    oid VARCHAR (10) NOT NULL,
+    ocid VARCHAR (10) NOT NULL,
+    odate VARCHAR(15),
+    otime  VARCHAR(15),
+    cost VARCHAR(15),
+
+    CONSTRAINT PRIMARY KEY (oid),
+    CONSTRAINT FOREIGN KEY (ocid) REFERENCES Customer (cid) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+SHOW TABLES;
+DESCRIBE Orders;
+
+
+DROP TABLE IF EXISTS Item_Reports;
+CREATE TABLE IF NOT EXISTS Item_Reports(
+
+    itemcode VARCHAR (10) NOT NULL,
+    oid VARCHAR (10) NOT NULL,
+    unitprice DOUBLE ,
+    itemcount INT  DEFAULT 0,
+    total DOUBLE DEFAULT 0.00,
+    rdate VARCHAR (15),
+
+    CONSTRAINT PRIMARY KEY (itemcode,oid),
+    CONSTRAINT FOREIGN KEY (itemcode) REFERENCES Item(Iid) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (oid) REFERENCES Orders (oid) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+SHOW TABLES;
+DESCRIBE Item_Reports;
+
+DROP TABLE IF EXISTS Billing;
+CREATE TABLE IF NOT EXISTS Billing
+(
+    Bicode VARCHAR (15),
+    Bid   VARCHAR(10) NOT NULL,
+    Bcid VARCHAR (10),
+    Bitype VARCHAR (15),
+    Bbrandname VARCHAR (15),
+    Bmodel VARCHAR (15),
+    Bimei VARCHAR (15),
+    Bwarrantydue VARCHAR (15),
+    Bdescription VARCHAR (25),
+    qty INT,
+    price DOUBLE,
+    Bdate VARCHAR (15),
+
+    CONSTRAINT PRIMARY KEY (Bicode)
+
+
+    );
+SHOW TABLES;
+DESCRIBE Billing;

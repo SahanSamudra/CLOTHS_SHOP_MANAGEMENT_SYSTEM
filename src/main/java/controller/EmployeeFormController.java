@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import model.Customer;
 import model.Employee;
+import tm.CustomerTm;
 import tm.EmployeeTm;
 
 import java.net.URL;
@@ -19,6 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class EmployeeFormController implements Initializable {
@@ -41,6 +43,11 @@ public class EmployeeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        getAllCustomer();
+
+
+
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("empId"));
         tblEmployee.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblEmployee.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("NIC"));
@@ -48,7 +55,7 @@ public class EmployeeFormController implements Initializable {
         tblEmployee.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("salary"));
         tblEmployee.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("contact"));
 
-        getAllCustomer();
+
 
         tblEmployee.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             txtEId.setText(newValue.getEmpId());
@@ -60,6 +67,15 @@ public class EmployeeFormController implements Initializable {
         });
     }
 
+
+    public void loadCustomers(ArrayList<Employee> customers) {
+        ObservableList<EmployeeTm> observableList = FXCollections.observableArrayList();
+        customers.forEach(c -> {
+            observableList.add(new EmployeeTm(c.getEmpId(), c.getName(), c.getNIC(), c.getAddress(),c.getSalary(),c.getContact()));
+            tblEmployee.setItems(observableList);
+        });
+
+    }
     private void getAllCustomer() {
         ArrayList<Employee> employees = new ArrayList<>();
         ObservableList<EmployeeTm>  employeeTms = FXCollections.observableArrayList();
@@ -84,19 +100,20 @@ public class EmployeeFormController implements Initializable {
     }
 
     public void btnSaveEmployee(ActionEvent actionEvent) {
-        Employee employee = new Employee(txtEId.getText(),txtEName.getText(),txtENIC.getText(),txtEAddress.getText(),Double.parseDouble(txtSallary.getText()),txtEContact.getText());
+        Employee employee = new Employee(txtEId.getText(), txtEName.getText(), txtENIC.getText(), txtEAddress.getText(), Double.parseDouble(txtSallary.getText()), txtEContact.getText());
         try {
             Connection connection = DbConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Employee " + " VALUES (?,?,?,?,?,?)");
-            preparedStatement.setObject(1,employee.getEmpId());
-            preparedStatement.setObject(2,employee.getName());
-            preparedStatement.setObject(3,employee.getNIC());
-            preparedStatement.setObject(4,employee.getAddress());
-            preparedStatement.setObject(5,employee.getSalary());
-            preparedStatement.setObject(6,employee.getContact());
+            preparedStatement.setObject(1, employee.getEmpId());
+            preparedStatement.setObject(2, employee.getName());
+            preparedStatement.setObject(3, employee.getNIC());
+            preparedStatement.setObject(4, employee.getAddress());
+            preparedStatement.setObject(5, employee.getSalary());
+            preparedStatement.setObject(6, employee.getContact());
             int add = preparedStatement.executeUpdate();
             if (add > 0) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Saved", ButtonType.OK).show();
+               new Alert(Alert.AlertType.CONFIRMATION, "Saved", ButtonType.OK).show();
+
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again", ButtonType.OK).show();
             }
@@ -106,7 +123,10 @@ public class EmployeeFormController implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        clearText();
+
+
+            clearText();
+
     }
 
     public void SupKeyPress(KeyEvent keyEvent) {

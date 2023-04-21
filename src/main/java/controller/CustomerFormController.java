@@ -26,9 +26,10 @@ public class CustomerFormController {
     public TableColumn colCusAddress;
     public JFXTextField txtCusName;
     public JFXTextField txtCusAddress;
-    public JFXTextField txtCusContact;
+
     public JFXTextField txtCustomerId;
     public Button btnSave;
+    public JFXTextField txtCusContact;
 
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();

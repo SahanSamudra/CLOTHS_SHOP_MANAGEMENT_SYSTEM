@@ -1,32 +1,34 @@
-package tm;
+package model;
 
 
 public class Item {
-    private  String id;
+    private  String Iid;
     private String type;
     private double price;
     private  int qty;
     private String size;
     private String supplier;
+    private double Tcost;
 
-    public Item(String iid, String type, String price, String qty, String size, String supplier) {
+    public Item(String text, String value, String txtSizeText, double v, int i, String cmbSupplierValue, double tcost) {
     }
 
-    public Item(String id, String type, Double price, int qty, String size, String supplier) {
-        this.id = id;
+    public Item(String iid, String type, double price, int qty, String size, String supplier, double tcost) {
+        Iid = iid;
         this.type = type;
         this.price = price;
         this.qty = qty;
         this.size = size;
         this.supplier = supplier;
+        Tcost = tcost;
     }
 
-    public String getId() {
-        return id;
+    public String getIid() {
+        return Iid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIid(String iid) {
+        Iid = iid;
     }
 
     public String getType() {
@@ -41,7 +43,7 @@ public class Item {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -69,15 +71,24 @@ public class Item {
         this.supplier = supplier;
     }
 
+    public double getTcost() {
+        return Tcost;
+    }
+
+    public void setTcost(double tcost) {
+        Tcost = tcost;
+    }
+
     @Override
     public String toString() {
-        return "item{" +
-                "id='" + id + '\'' +
+        return "Item{" +
+                "Iid='" + Iid + '\'' +
                 ", type='" + type + '\'' +
                 ", price=" + price +
                 ", qty=" + qty +
                 ", size='" + size + '\'' +
                 ", supplier='" + supplier + '\'' +
+                ", Tcost=" + Tcost +
                 '}';
     }
 }

@@ -1,14 +1,8 @@
 package model;
 
-import tm.Item;
-import util.CrudUtil;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class ItemModel {
 
-    private static String sql;
+    /*private static String sql;
     private String ItemID;
 
 
@@ -46,7 +40,7 @@ public class ItemModel {
         String sql = "DELETE FROM customer WHERE Iid = ?";
         return CrudUtil.execute(sql,id);
     }
-    public static ResultSet getAllItemsCode() throws SQLException, ClassNotFoundException {
+    public static Customer getAllItemsCode() throws SQLException, ClassNotFoundException {
         String sql = "SELECT Iid FROM item";
         ResultSet resultSet = CrudUtil.execute(sql);
         return resultSet;
@@ -55,5 +49,5 @@ public class ItemModel {
         String sql = "SELECT * FROM item";
         ResultSet resultSet = CrudUtil.execute(sql);
         return resultSet;
-    }
+    }*/
 }
