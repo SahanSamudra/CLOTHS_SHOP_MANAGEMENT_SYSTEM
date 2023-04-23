@@ -132,7 +132,7 @@
             <Font name="System Bold Italic" size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="217.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="14" textFill="WHITE">
+      <Label fx:id="lblEmployeeCount" alignment="CENTER" layoutX="217.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="14" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>
@@ -142,7 +142,7 @@
             <Font name="System Bold Italic" size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="389.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="9" textFill="WHITE">
+      <Label fx:id="lblSupplierCount" alignment="CENTER" layoutX="389.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="9" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>
@@ -162,7 +162,7 @@
             <Font name="System Bold Italic" size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="36.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="56" textFill="WHITE">
+      <Label fx:id="lblCustomerCustomer" alignment="CENTER" layoutX="36.0" layoutY="229.0" prefHeight="66.0" prefWidth="83.0" text="56" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>

@@ -1,8 +1,5 @@
 package controller;
 
-
-
-import model.Customer;
 import model.Supplier;
 
 import java.sql.SQLException;
