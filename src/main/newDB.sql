@@ -119,3 +119,14 @@ CREATE TABLE IF NOT EXISTS Billing
     );
 SHOW TABLES;
 DESCRIBE Billing;
+
+create table returnItem(
+    id VARCHAR(5),
+    qty INT,
+    size_ VARCHAR(2),
+    item_id VARCHAR(10),
+
+    CONSTRAINT PRIMARY KEY(id),
+    CONSTRAINT FOREIGN KEY(item_id) REFERENCES Item(Iid) ON DELETE CASCADE ON UPDATE CASCADE
+
+)

@@ -22,6 +22,7 @@ import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;*/
+import model.Order;
 import tm.PlaceOrderTm;
 import util.ValidationUtil;
 
@@ -56,6 +57,7 @@ public class PaymentFormController {
     public JFXTextField txtCustomerID;
     public TableView tblBilling;
     public TableColumn colItemID;
+
     public TableColumn colBrandName;
     public TableColumn colModel;
     public TableColumn colWarramtyDue;
@@ -79,7 +81,7 @@ public class PaymentFormController {
     public TableColumn colDate;
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
-    Pattern qtyPattern = Pattern.compile("^[0-9]{1,6}$");
+    Pattern qtyPattern = Pattern.compile("^[0-9]{1,2}$");
 
     private void storeValidations(){
         map.put(txtQty, qtyPattern);
@@ -90,17 +92,16 @@ public class PaymentFormController {
 
 
     public void initialize(){
+        lblItemCount.setText("0");
         btnAddToCart.setDisable(true);
         storeValidations();
-
-
 
         colItemID.setCellValueFactory(new PropertyValueFactory<>("code"));
         colItemType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colSize.setCellValueFactory(new PropertyValueFactory<>("size"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
-        colItemTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        colItemTotal.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
 
 
@@ -225,11 +226,11 @@ public class PaymentFormController {
 
     ObservableList<PlaceOrderTm> oblist =FXCollections.observableArrayList();
     public void btnAddToCart(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-
         String ItemType = txtItemType.getText();
         String ItemSize = txtSize.getText();
         int QtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
         int QtyForCustomer = Integer.parseInt(txtQty.getText());
+        lblItemCount.setText(String.valueOf(Integer.parseInt(lblItemCount.getText())+QtyForCustomer));
         double UnitPrice =Double.parseDouble(txtPrice.getText());
         double Total = QtyForCustomer * UnitPrice;
 
@@ -311,7 +312,7 @@ public class PaymentFormController {
 
     public void btnPlaceOrder(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-      /*  ArrayList<ItemReports> items= new ArrayList<>();
+        ArrayList<ItemReports> items= new ArrayList<>();
         double total=0;
         for (PlaceOrderTm tempTm:oblist
         ) {
@@ -325,7 +326,7 @@ public class PaymentFormController {
             );
 
         }
-        OrderController order =new OrderController(
+        Order order =new Order(
                 lblOrderId.getText(),
                 txtCustomerID.getText(),
                 lblDate.getText(),
@@ -335,19 +336,19 @@ public class PaymentFormController {
         );
         if (new OrderController().placeOrder(order)){
 
-            try {
+            /*try {
                 JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("../invoice/Dream Bill.jrxml"));
                 JasperReport compileReport = JasperCompileManager.compileReport(design);
-                *//*Get all values from table*//*
+                Get all values from table
                 ObservableList<PlaceOrderTm> items1 = tblBilling.getItems();
-                *//*Create a Bean Array Data Source and pass the table values to it*//*
+                Create a Bean Array Data Source and pass the table values to it
 
-                *//*setting values for parameters*//*
+                setting values for parameters
                 String OrderId = lblOrderId.getText();
                 String Cost =lblFinalTotal.getText();
 
 
-                *//*Setting parameter values*//*
+                Setting parameter values
                 HashMap map = new HashMap();
                 map.put("OrderId", OrderId);// id= param name of report // customerID= input value of text field
                 map.put("Cost", Cost);
@@ -356,15 +357,15 @@ public class PaymentFormController {
                 JasperViewer.viewReport(jasperPrint, false);
 
                 //if you wanna print the report directly you can use this instead of JasperViewer
-                *//*JasperPrintManager.printReport(jasperPrint,false);*//*
+                JasperPrintManager.printReport(jasperPrint,false);
 
             } catch (JRException e) {
                 e.printStackTrace();
-            }
+            }*/
 
         }else {
             new Alert(Alert.AlertType.WARNING,"Try Again").show();
-        }*/
+        }
     }
 
     public void KeyPress(KeyEvent keyEvent) {
@@ -380,5 +381,9 @@ public class PaymentFormController {
     }
 
     public void itemSelectOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtQtyKeyPressOnAction(KeyEvent keyEvent) {
+        KeyPress(keyEvent);
     }
 }

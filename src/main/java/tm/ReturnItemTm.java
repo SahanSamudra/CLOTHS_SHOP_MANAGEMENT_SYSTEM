@@ -1,81 +1,72 @@
 package tm;
 
-public class ReturnItemTm {
+import java.sql.Date;
 
-    private String returnid;
-    private String customeridR;
-    private String itemcodeR;
-    private String returnreason;
-    private String billingdateR;
-    private String returndate;
-    private String warrantydueR;
+public class ReturnItemTm {
+    private String id;
+    private int qty;
+    private String size;
+    private String itemId;
+    private Date date;
+    private double price;
+
+    public ReturnItemTm(String id, int qty, String size, String itemId, Date date, double price) {
+        this.id = id;
+        this.qty = qty;
+        this.size = size;
+        this.itemId = itemId;
+        this.date = date;
+        this.price = price;
+    }
 
     public ReturnItemTm() {
     }
 
-    public ReturnItemTm(String returnid, String customeridR, String itemcodeR, String returnreason, String billingdateR, String returndate, String warrantydueR) {
-        this.returnid = returnid;
-        this.customeridR = customeridR;
-        this.itemcodeR = itemcodeR;
-        this.returnreason = returnreason;
-        this.billingdateR = billingdateR;
-        this.returndate = returndate;
-        this.warrantydueR = warrantydueR;
+    public String getId() {
+        return id;
     }
 
-    public String getReturnid() {
-        return returnid;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setReturnid(String returnid) {
-        this.returnid = returnid;
+    public int getQty() {
+        return qty;
     }
 
-    public String getCustomeridR() {
-        return customeridR;
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
-    public void setCustomeridR(String customeridR) {
-        this.customeridR = customeridR;
+    public String getSize() {
+        return size;
     }
 
-    public String getItemcodeR() {
-        return itemcodeR;
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public void setItemcodeR(String itemcodeR) {
-        this.itemcodeR = itemcodeR;
+    public String getItemId() {
+        return itemId;
     }
 
-    public String getReturnreason() {
-        return returnreason;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 
-    public void setReturnreason(String returnreason) {
-        this.returnreason = returnreason;
+    public Date getDate() {
+        return date;
     }
 
-    public String getBillingdateR() {
-        return billingdateR;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public void setBillingdateR(String billingdateR) {
-        this.billingdateR = billingdateR;
+    public double getPrice() {
+        return price;
     }
 
-    public String getReturndate() {
-        return returndate;
-    }
-
-    public void setReturndate(String returndate) {
-        this.returndate = returndate;
-    }
-
-    public String getWarrantydueR() {
-        return warrantydueR;
-    }
-
-    public void setWarrantydueR(String warrantydueR) {
-        this.warrantydueR = warrantydueR;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

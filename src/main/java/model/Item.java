@@ -1,7 +1,9 @@
 package model;
 
 
-public class Item {
+import tm.ItemTm;
+
+public class Item  {
     private  String Iid;
     private String type;
     private double price;
@@ -10,17 +12,14 @@ public class Item {
     private String supplier;
     private double Tcost;
 
-    public Item(String text, String value, String txtSizeText, double v, int i, String cmbSupplierValue, double tcost) {
-    }
-
     public Item(String iid, String type, double price, int qty, String size, String supplier, double tcost) {
-        Iid = iid;
+        this.Iid = iid;
         this.type = type;
         this.price = price;
         this.qty = qty;
         this.size = size;
         this.supplier = supplier;
-        Tcost = tcost;
+        this.Tcost = tcost;
     }
 
     public String getIid() {

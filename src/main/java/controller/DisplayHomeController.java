@@ -7,10 +7,13 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import util.CrudUtil;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
@@ -55,6 +58,7 @@ public class DisplayHomeController {
                 new PieChart.Data("December", 22));
         PieChart.setData(pieChartData);
 
+
         XYChart.Series series = new XYChart.Series();
         series.getData().add(new XYChart.Data("0", 2));
         series.getData().add(new XYChart.Data("1", 23));
@@ -67,7 +71,29 @@ public class DisplayHomeController {
         series.getData().add(new XYChart.Data("8", 50));
         areaChart.getData().add(series);
 
+        for (int i = 6; i>0; i--) {
+
+        }
+
     }
+    public void getLineChartData(String date){
+        String now= String.valueOf(LocalDate.now());
+        try {
+            ResultSet resultSet = CrudUtil.execute("SELECT total FROM item_reports WHERE rdate=?", now);
+            double tot = 0;
+            if (resultSet.next()){
+                String string = resultSet.getString(1);
+                double v = Double.parseDouble(string);
+                tot+=v;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
     public void initialize() {

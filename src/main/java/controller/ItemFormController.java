@@ -15,6 +15,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import model.Item;
+import model.ItemModel;
+import model.model2.ItemModel2;
 import tm.ItemTm;
 import util.ValidationUtil;
 
@@ -77,18 +79,13 @@ public class ItemFormController {
 
         setCmbTypeComboxData();
         loadSupIDs();
-
-
-
-            colItemId.setCellValueFactory(new PropertyValueFactory<>("iid"));
+            colItemId.setCellValueFactory(new PropertyValueFactory<>("Iid"));
             colItemType.setCellValueFactory(new PropertyValueFactory<>("type"));
             colSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
             colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
             colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplier"));
            colMTotalCost.setCellValueFactory(new PropertyValueFactory<>("tcost"));
-
-
 
         try {
             loadAllItems(new ItemSaveController().getAllItem());
@@ -101,14 +98,24 @@ public class ItemFormController {
     }
 
     public void loadAllItems(ArrayList<Item> items){
-        ObservableList<ItemTm> observableList= FXCollections.observableArrayList();
+        /*ObservableList<ItemTm> observableList= FXCollections.observableArrayList();
         items.forEach(m->{
             observableList.add(new ItemTm(m.getIid(),m.getType(),m.getSize(),m.getPrice(),m.getQty(),m.getSupplier(),
                     m.getTcost()));
             tblItems.setItems(observableList);
-        });
-
-
+        });*/
+        ObservableList<ItemTm> observableList= FXCollections.observableArrayList();
+        try {
+            ArrayList<Item> allItem = ItemModel2.getAllItem();
+            for (Item tem:allItem){
+                observableList.add(new ItemTm(tem.getIid(),tem.getType(),tem.getPrice(),tem.getQty(),tem.getSize(),tem.getSupplier(),tem.getTcost()));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        tblItems.setItems(observableList);
 
 
     }
@@ -140,17 +147,14 @@ public class ItemFormController {
     }
 
     public void btnItemSave(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        System.out.println(txtId.getText()+"==============");
 
         double Tcost=Double.parseDouble(txtQty.getText())*Double.parseDouble(txtPrice.getText());
 
-        Item m=new Item(
-                txtId.getText(),
-                cmbType.getValue(),
-                txtSize.getText(),
-                Double.parseDouble(txtPrice.getText()),
-                Integer.parseInt(txtQty.getText()),
-                cmbSupplier.getValue(),
-                Tcost);
+        Item m= new Item(txtId.getText(),cmbType.getValue(),Double.parseDouble(txtSize.getText()),Integer.parseInt(txtPrice.getText()),
+                String.valueOf(txtQty.getText()),cmbSupplier.getValue(), Tcost);
+
+
 
 
 
@@ -172,9 +176,8 @@ public class ItemFormController {
 
     public void btnItemUpdate(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         double Tcost=Double.parseDouble(txtQty.getText())*Double.parseDouble(txtPrice.getText());
-        Item m=new Item(txtId.getText(),cmbType.getValue(),txtSize.getText(),Double.parseDouble(txtPrice.getText()),
-                Integer.parseInt(txtQty.getText()),cmbSupplier.getValue(), Tcost);
-
+        Item m=new Item(txtId.getText(),cmbType.getValue(),Double.parseDouble(txtSize.getText()),Integer.parseInt(txtPrice.getText()),
+                String.valueOf(txtQty.getText()),cmbSupplier.getValue(), Tcost);
 
 
         if (new ItemSaveController().updateItems(m)) {  Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to Update", ButtonType.YES, ButtonType.NO);
@@ -202,6 +205,10 @@ public class ItemFormController {
     }
 
     public void txtKeyPress(KeyEvent keyEvent) {
+    }
+
+    public void KeyPress(KeyEvent keyEvent) {
+
     }
 
 

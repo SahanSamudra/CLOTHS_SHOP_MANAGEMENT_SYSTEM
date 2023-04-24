@@ -113,6 +113,7 @@ public class EmployeeFormController implements Initializable {
             int add = preparedStatement.executeUpdate();
             if (add > 0) {
                new Alert(Alert.AlertType.CONFIRMATION, "Saved", ButtonType.OK).show();
+                getAllCustomer();
 
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again", ButtonType.OK).show();
@@ -147,6 +148,7 @@ public class EmployeeFormController implements Initializable {
             if (update > 0) {
 
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated", ButtonType.OK).show();
+                getAllCustomer();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again", ButtonType.OK).show();
             }
@@ -167,6 +169,7 @@ public class EmployeeFormController implements Initializable {
             int delete = preparedStatement.executeUpdate();
             if (delete > 0) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Deleted", ButtonType.OK).show();
+                getAllCustomer();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again", ButtonType.OK).show();
             }

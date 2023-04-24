@@ -99,5 +99,20 @@
             <NumberAxis prefHeight="310.0" prefWidth="56.0" side="LEFT" />
          </yAxis>
       </LineChart>
+      <Label fx:id="lblDailyIncome" layoutX="307.0" layoutY="86.0" prefHeight="60.0" prefWidth="163.0" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMonthlyIncome" layoutX="332.0" layoutY="152.0" prefHeight="60.0" prefWidth="221.0" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAnnualIncome" layoutX="345.0" layoutY="216.0" prefHeight="60.0" prefWidth="370.0" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

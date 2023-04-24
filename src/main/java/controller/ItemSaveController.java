@@ -3,6 +3,7 @@ package controller;
 import DB.DbConnection;
 import model.Customer;
 import model.Item;
+import util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,11 +25,11 @@ public class ItemSaveController {
     }
 
     public boolean saveItem(Item M) throws SQLException, ClassNotFoundException {
-
         Connection con = DbConnection.getInstance().getConnection();
         String query = "INSERT into Item VALUES (?,?,?,?,?,?,?)";
         PreparedStatement stm = con.prepareStatement(query);
 //        PreparedStatement Stm= DbConnection.getInstance().getConnection().prepareStatement("INSERT into Item VALUES (?,?,?,?,?,?,?)");
+        System.out.println(M.getIid());
         stm.setObject(1,M.getIid());
         stm.setObject(2,M.getType());
         stm.setObject(3,M.getSize());
@@ -36,8 +37,6 @@ public class ItemSaveController {
         stm.setObject(5,M.getQty());
         stm.setObject(6,M.getSupplier());
         stm.setObject(7,M.getTcost());
-
-
         return stm.executeUpdate()>0;
     }
     public ArrayList<Item> getAllItem() throws SQLException, ClassNotFoundException {

@@ -77,7 +77,7 @@
       <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="272.0" layoutY="191.0" promptText="Price" />
       <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="68.0" layoutY="191.0" promptText="Size" />
       <JFXTextField fx:id="txtItemType" labelFloat="true" layoutX="272.0" layoutY="126.0" promptText="Type" />
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="473.0" layoutY="191.0" promptText="Qty" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="473.0" layoutY="191.0" onKeyReleased="#txtQtyKeyPressOnAction" promptText="Qty" />
       <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="473.0" layoutY="126.0" promptText="Qty On Hand" />
       <Label layoutX="645.0" layoutY="68.0" prefHeight="226.0" prefWidth="243.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
          <styleClass>

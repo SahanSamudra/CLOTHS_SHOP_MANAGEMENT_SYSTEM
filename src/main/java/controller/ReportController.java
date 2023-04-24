@@ -58,6 +58,7 @@ public class ReportController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 thisYerIncome += Double.parseDouble(resultSet.getString(5));
+                System.out.println(thisYerIncome);
             }
             lblAnnualIncome.setText("" + thisYerIncome);
 
