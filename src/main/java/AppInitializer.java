@@ -21,7 +21,7 @@ public class AppInitializer extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/LoadingPage.fxml"))));
+        primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/LoadingPage.fxml"))));
         primaryStage.setTitle("Shalini Fashion v.1.0  ");
         primaryStage.centerOnScreen();
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -30,7 +30,7 @@ public class AppInitializer extends Application {
         primaryStage.show();
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img/download-removebg-preview-removebg-preview.png")));
 
-        Parent loginRoot = FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"));
+        Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/LoginForm.fxml"));
         Stage logStage= new Stage();
         logStage.setScene(new Scene(loginRoot));
         logStage.centerOnScreen();

@@ -127,7 +127,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="36.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="130" textFill="WHITE">
+      <Label fx:id="lblOrderCount" alignment="CENTER" layoutX="36.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="130" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>
@@ -137,7 +137,7 @@
             <Font name="System Bold Italic" size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="217.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="14" textFill="WHITE">
+      <Label fx:id="lblReturnCount" alignment="CENTER" layoutX="217.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="14" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>
@@ -157,7 +157,7 @@
             <Image url="@../img/icons8-supplier-64.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="389.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="8" textFill="WHITE">
+      <Label fx:id="lblItemCount" alignment="CENTER" layoutX="389.0" layoutY="93.0" prefHeight="66.0" prefWidth="83.0" text="8" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="45.0" />
          </font>

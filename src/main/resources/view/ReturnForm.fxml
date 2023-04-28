@@ -56,7 +56,7 @@
             <String fx:value="button-" />
          </styleClass>
       </JFXButton>
-      <JFXComboBox fx:id="cmbItemId" layoutX="553.0" layoutY="129.0" prefHeight="31.0" prefWidth="291.0" promptText="Item ID"  onAction="#cmbItemOnAction"/>
+      <JFXComboBox fx:id="cmbItemId" layoutX="553.0" layoutY="129.0" onAction="#cmbItemOnAction" prefHeight="31.0" prefWidth="291.0" promptText="Item ID" />
       <Button fx:id="btnSave" layoutX="772.0" layoutY="13.0" mnemonicParsing="false" onAction="#btnReturnSave" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -102,6 +102,6 @@
             <String fx:value="button4" />
          </styleClass>
       </Button>
-      <DatePicker fx:id="dpReturnDate" layoutX="529.0" layoutY="212.0" stylesheets="@../styles/styles.css" />
+      <DatePicker fx:id="dpReturnDate" layoutX="553.0" layoutY="181.0" prefHeight="31.0" prefWidth="291.0" stylesheets="@../styles/styles.css" />
    </children>
 </AnchorPane>

@@ -23,6 +23,12 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;*/
 import model.Order;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import org.apache.commons.collections4.Get;
 import tm.PlaceOrderTm;
 import util.ValidationUtil;
 
@@ -79,6 +85,7 @@ public class PaymentFormController {
     public JFXTextField txtSize;
     public TableColumn colSize;
     public TableColumn colDate;
+    public Button btnAddToCart1;
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern qtyPattern = Pattern.compile("^[0-9]{1,2}$");
@@ -336,19 +343,22 @@ public class PaymentFormController {
         );
         if (new OrderController().placeOrder(order)){
 
-            /*try {
+
+
+
+            try {
                 JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("../invoice/Dream Bill.jrxml"));
                 JasperReport compileReport = JasperCompileManager.compileReport(design);
-                Get all values from table
+               // Get all values from table
                 ObservableList<PlaceOrderTm> items1 = tblBilling.getItems();
-                Create a Bean Array Data Source and pass the table values to it
+               // Create a Bean Array Data Source and pass the table values to it
 
-                setting values for parameters
+               // setting values for parameters
                 String OrderId = lblOrderId.getText();
                 String Cost =lblFinalTotal.getText();
 
 
-                Setting parameter values
+                //Setting parameter values
                 HashMap map = new HashMap();
                 map.put("OrderId", OrderId);// id= param name of report // customerID= input value of text field
                 map.put("Cost", Cost);
@@ -361,7 +371,7 @@ public class PaymentFormController {
 
             } catch (JRException e) {
                 e.printStackTrace();
-            }*/
+            }
 
         }else {
             new Alert(Alert.AlertType.WARNING,"Try Again").show();

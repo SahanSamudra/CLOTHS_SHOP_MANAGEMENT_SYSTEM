@@ -68,7 +68,7 @@ public class OrdersController {
     public void loadOrders(ArrayList<Order> orders) {
         ObservableList<Order> observableList = FXCollections.observableArrayList();
         orders.forEach(c -> {
-            observableList.add(new Order(c.getOid(), c.getOcid(), c.getOdate(), c.getOcid(),c.getCost()));
+            observableList.add(new Order(c.getOid(), c.getOcid(), c.getOdate(), c.getOtime(),c.getCost()));
             tblOrder.setItems(observableList);
         });
 

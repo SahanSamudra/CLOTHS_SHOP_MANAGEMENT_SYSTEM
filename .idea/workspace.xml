@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Create Loading Progress And Updated.">
+    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DisplayHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DisplayHomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemSaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrdersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReturnItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tm/ReturnItemTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tm/ReturnItemTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/newDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/newDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/OrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OrderForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DisplayHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DisplayHome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ReportForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ReportForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ReturnForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ReturnForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +54,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/IJSE/CLOTHS_SHOP_MANAGEMENT_SYSTEM",
+    "last_opened_file_path": "D:/IJSE/CLOTHS_SHOP_MANAGEMENT_SYSTEM/src/main/java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -70,11 +63,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java" />
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java\model" />
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\styles" />
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\lib" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\lib\cam" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\img" />
@@ -87,13 +80,23 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="tm" />
+      <recent name="model.model2" />
       <recent name="model" />
+      <recent name="to" />
+      <recent name="tm" />
+      <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.CLOTHS_SHOP_MANAGEMENT_SYSTEM [javafx:compile...]">
+  <component name="RunManager" selected="Application.Demo">
     <configuration name="AppInitializer" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AppInitializer" />
+      <module name="CLOTHS_SHOP_MANAGEMENT_SYSTEM" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo" />
       <module name="CLOTHS_SHOP_MANAGEMENT_SYSTEM" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,9 +170,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.AppInitializer" />
+      <item itemvalue="Application.Demo" />
       <item itemvalue="Maven.CLOTHS_SHOP_MANAGEMENT_SYSTEM [javafx:run]" />
       <item itemvalue="Maven.CLOTHS_SHOP_MANAGEMENT_SYSTEM [javafx:compile...]" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -278,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682226902956</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Update.">
+      <created>1682308192191</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682308192191</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -305,7 +321,8 @@
     <MESSAGE value="Update ItemForm.fxml" />
     <MESSAGE value="Update" />
     <MESSAGE value="Create Loading Progress And Updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Loading Progress And Updated." />
+    <MESSAGE value="Update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -316,11 +333,14 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java</url>
-          <line>50</line>
+          <line>56</line>
           <properties field="lblDiscount" class="controller.PaymentFormController" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CLOTHS_SHOP_MANAGEMENT_SYSTEM$AppInitializer.ic" NAME="AppInitializer Coverage Results" MODIFIED="1682616307933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,29 +1,42 @@
 package controller;
 
 import DB.DbConnection;
+import com.beust.ah.A;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import model.Customer;
-import model.Employee;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import model.*;
+import service.QrPerformance;
+import tm.AttendenceTM;
 import tm.CustomerTm;
 import tm.EmployeeTm;
+import to.AttendanceTo;
+import to.EmployeeTo;
+import to.WorkingDayTo;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class EmployeeFormController implements Initializable {
+public class EmployeeFormController implements Initializable, QrPerformance {
     public Button btnSave;
     public JFXTextField txtENIC;
     public JFXTextField txtEAddress;
@@ -39,15 +52,19 @@ public class EmployeeFormController implements Initializable {
     public TableColumn colESallary;
     public TableColumn colEContact;
     public Button btnSaveEmployee;
+    public AnchorPane EmployeeAttendanceContext;
+    public TableView tblAttendance;
+    public TableColumn colEmployeeName;
+    public TableColumn colStatus;
+    public Label lblEmployee;
+    public TableView<AttendenceTM> tblAttendence;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         getAllCustomer();
-
-
-
+        setTable();addWorkingDay();
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("empId"));
         tblEmployee.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblEmployee.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("NIC"));
@@ -68,6 +85,67 @@ public class EmployeeFormController implements Initializable {
     }
 
 
+
+    public void addWorkingDay(){
+        try {
+            boolean b = false;
+            WorkingDayTo workingDay = WorkingDayModel.getWorkingDay(Date.valueOf(LocalDate.now()));
+            if(workingDay==null){
+                String id = WorkingDayModel.getNewId();
+                ArrayList<Employee> allEmployee = getAllCustomer();
+                ArrayList<AttendanceTo> attendance = new ArrayList<>();
+                for (Employee employee : allEmployee){
+                    attendance.add(new AttendanceTo(employee.getEmpId(),id, Time.valueOf(LocalTime.now()),"N"));
+                }
+                b= WorkingDayModel.addWorkingDay(attendance);
+            }
+            setTable();
+            System.out.println("Already Added "+!b);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void setTable(){
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<AttendenceTM,String >("employeeName"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<AttendenceTM,String>("status"));
+        try {
+            //ArrayList<AttendanceTo> at = AttendanceModel.getAttendanceByDay(WorkingDayModel.getWorkingDay(Date.valueOf(LocalDate.now())).getId());
+            WorkingDayTo workingDay = WorkingDayModel.getWorkingDay(Date.valueOf(LocalDate.now()));
+            if(workingDay==null)return;
+            ArrayList<AttendenceTM> at = AttendanceModel.getAllAttendance(workingDay.getId());
+
+            tblAttendence.setItems(FXCollections.observableArrayList(at));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void btnEmployeeAttendance(ActionEvent actionEvent) {
+
+        //PigCageContext.setTranslateX(1700);
+
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(0.2));
+        slide.setNode(EmployeeAttendanceContext);
+
+        slide.setToX(0);
+        slide.play();
+
+        EmployeeAttendanceContext.setTranslateX(-176);
+        slide.setOnFinished((ActionEvent e)-> {
+
+        });
+    }
+
+
+
     public void loadCustomers(ArrayList<Employee> customers) {
         ObservableList<EmployeeTm> observableList = FXCollections.observableArrayList();
         customers.forEach(c -> {
@@ -76,7 +154,7 @@ public class EmployeeFormController implements Initializable {
         });
 
     }
-    private void getAllCustomer() {
+    private ArrayList<Employee> getAllCustomer() {
         ArrayList<Employee> employees = new ArrayList<>();
         ObservableList<EmployeeTm>  employeeTms = FXCollections.observableArrayList();
         try {
@@ -96,7 +174,7 @@ public class EmployeeFormController implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+            return employees;
     }
 
     public void btnSaveEmployee(ActionEvent actionEvent) {
@@ -204,6 +282,8 @@ public class EmployeeFormController implements Initializable {
         }
     }
 
+
+
     private void clearText() {
         txtEId.clear();
         txtEName.clear();
@@ -216,7 +296,71 @@ public class EmployeeFormController implements Initializable {
     }
 
 
+    public void btnEAttendance(ActionEvent actionEvent) {
 
+    }
 
+    public void btnQrOnACtion(ActionEvent actionEvent) throws IOException {
 
+        URL resource = getClass().getResource("/view/QrScannerForm.fxml");
+        FXMLLoader loader = new FXMLLoader(resource);
+        Parent load = loader.load();
+        QrScannerFormController controller = loader.getController();
+        controller.setController(this);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.show();
+    }
+
+    @Override
+    public void qrIdRequestAction(String id) {
+        System.out.println(id+"Send");
+        ObservableList<AttendenceTM> items = tblAttendence.getItems();
+        for (AttendenceTM ob : items){
+            if(ob.getEmployeeId().equals(id)){
+                ob.setStatus("Y");
+            }
+        }
+        tblAttendence.refresh();
+    }
+
+    @Override
+    public String getDetail(String id) {
+        System.out.println(id+" requested");
+        Connection connection = null;
+        try {
+            connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Employee WHERE eId = ?");
+            preparedStatement.setObject(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("Searching");
+            while (resultSet.next()) {
+                System.out.println("Found");
+                return resultSet.getString(1);
+            }
+            System.out.println("Not Found");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        ObservableList<AttendenceTM> items = tblAttendence.getItems();
+        ArrayList<AttendanceTo> list = new ArrayList<>();
+        WorkingDayTo workingDay = WorkingDayModel.getWorkingDay(Date.valueOf(LocalDate.now()));
+
+        for (AttendenceTM ob : items){
+            list.add(new AttendanceTo(ob.getEmployeeId(),workingDay.getId(),Time.valueOf(LocalTime.now()),ob.getStatus()));
+        }
+        boolean b = AttendanceModel.updateAttendance(list);
+        if(b){
+            new Alert(Alert.AlertType.INFORMATION,"Success :)").show();
+        }else {
+            new Alert(Alert.AlertType.INFORMATION,"Failed").show();
+        }
+    }
 }

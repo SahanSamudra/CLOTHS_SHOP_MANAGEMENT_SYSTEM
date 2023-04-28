@@ -1,6 +1,7 @@
 package controller;
 
 import DB.DbConnection;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
@@ -27,17 +28,25 @@ public class DisplayHomeController {
     public Label lblSupplierCount;
     public Label lblEmployeeCount;
     public Label lblCustomerCustomer;
+    public Label lblOrderCount;
+    public Label lblReturnCount;
+    public Label lblItemCount;
 
+  /*  type.add("Shirt");
+        type.add("T-shirt");
+        type.add("Pants");
+        type.add("Gowns");
+        type.add("Frock");
+        type.add("Other");*/
+    private void loadClothesPieChart() throws SQLException, ClassNotFoundException {
 
-    public void loadClothesPieChart() throws SQLException, ClassNotFoundException {
-        ObservableList<PieChart.Data> pieChartData = observableArrayList(
-                new PieChart.Data("Pants", 25),
-                new PieChart.Data("Shirt", 20),
-                new PieChart.Data("T-Shirt", 30),
-                new PieChart.Data("Gowns", 10),
-                new PieChart.Data("Other", 15)
-        );
-        clothesPieChart.setData(pieChartData);
+   /*     Shirt
+        T-shirt
+        Pants
+        Gowns
+        Frock
+        Other*/
+
 
     }
 
@@ -97,6 +106,31 @@ public class DisplayHomeController {
 
 
     public void initialize() {
+
+
+        try {
+            ItemCount();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            ReturnCount();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            OrderCount();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
 
         try {
@@ -172,6 +206,37 @@ public class DisplayHomeController {
             lblCustomerCustomer.setText(String.valueOf(a));
         }
 
+    }
+
+    public void OrderCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("Select * From Orders");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
+            a++;
+            lblOrderCount.setText(String.valueOf(a));
+        }
+    }
+
+
+    public void ReturnCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("Select * From returnItem");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
+            a++;
+            lblReturnCount.setText(String.valueOf(a));
+        }
+    }
+
+    public void ItemCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("Select * From Item");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
+            a++;
+            lblItemCount.setText(String.valueOf(a));
+        }
     }
 }
 

@@ -4,6 +4,8 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -33,7 +35,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <TableView fx:id="tblBilling" layoutX="18.0" layoutY="310.0" prefHeight="295.0" prefWidth="872.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
+      <TableView fx:id="tblBilling" layoutX="18.0" layoutY="310.0" prefHeight="262.0" prefWidth="872.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
          <columns>
             <TableColumn fx:id="colItemID" prefWidth="113.0" text="Item ID" />
             <TableColumn fx:id="colItemType" prefWidth="145.0" text="Type" />
@@ -69,7 +71,7 @@
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblOrderId" layoutX="168.0" layoutY="79.0" prefHeight="30.0" prefWidth="125.0">
+      <Label fx:id="lblOrderId" layoutX="191.0" layoutY="79.0" prefHeight="30.0" prefWidth="102.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -140,11 +142,38 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnPlaceOrder" layoutX="473.0" layoutY="253.0" onAction="#btnPlaceOrder" prefHeight="31.0" prefWidth="84.0" text="pay" />
-      <JFXButton fx:id="btnClear" layoutX="376.0" layoutY="253.0" onAction="#btnClear" text="Delete" />
-      <JFXButton fx:id="btnAddToCart" layoutX="207.0" layoutY="253.0" onAction="#btnAddToCart" text="Add  TO cART" />
+      <JFXButton fx:id="btnPlaceOrder" layoutX="760.0" layoutY="579.0" onAction="#btnPlaceOrder" prefHeight="31.0" prefWidth="125.0" stylesheets="@../styles/styles.css" text="Pay" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="button3" />
+            <String fx:value="button-" />
+         </styleClass></JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="616.0" layoutY="575.0" onAction="#btnClear" prefHeight="39.0" prefWidth="125.0" stylesheets="@../styles/styles.css" text="Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn-Delete" />
+            <String fx:value="button-" />
+         </styleClass>
+         <effect>
+            <InnerShadow />
+         </effect></JFXButton>
       <JFXComboBox fx:id="cmbItemCode" labelFloat="true" layoutX="65.0" layoutY="126.0" onAction="#itemSelectOnAction" prefHeight="31.0" prefWidth="169.0" promptText="ItemID" />
-      <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="473.0" layoutY="73.0" promptText="Customer ID" unFocusColor="WHITE" />
-      <JFXComboBox fx:id="cmbCustomer" layoutX="262.0" layoutY="79.0" prefHeight="31.0" prefWidth="189.0" />
+      <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="323.0" layoutY="22.0" promptText="Customer ID" unFocusColor="WHITE" visible="false" />
+      <JFXComboBox fx:id="cmbCustomer" layoutX="272.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
+      <Button fx:id="btnAddToCart" layoutX="473.0" layoutY="242.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="39.0" prefWidth="169.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Add to Cart">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow height="41.0" radius="20.0" spread="0.14" width="41.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

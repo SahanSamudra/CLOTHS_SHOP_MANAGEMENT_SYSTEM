@@ -69,7 +69,11 @@ public class ItemFormController {
     private void setCmbTypeComboxData() {
         ObservableList<String> type=FXCollections.observableArrayList();
         type.add("Shirt");
-        type.add("Tshirt");
+        type.add("T-shirt");
+        type.add("Pants");
+        type.add("Gowns");
+        type.add("Frock");
+        type.add("Other");
         cmbType.setItems(type);
     }
 
