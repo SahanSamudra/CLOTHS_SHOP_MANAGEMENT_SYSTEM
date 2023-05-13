@@ -32,9 +32,9 @@ public class ItemSaveController {
         System.out.println(M.getIid());
         stm.setObject(1,M.getIid());
         stm.setObject(2,M.getType());
-        stm.setObject(3,M.getSize());
-        stm.setObject(4,M.getPrice());
-        stm.setObject(5,M.getQty());
+        stm.setObject(3,M.getPrice());
+        stm.setObject(4,M.getQty());
+        stm.setObject(5,M.getSize());
         stm.setObject(6,M.getSupplier());
         stm.setObject(7,M.getTcost());
         return stm.executeUpdate()>0;

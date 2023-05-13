@@ -155,9 +155,9 @@ public class ItemFormController {
 
         double Tcost=Double.parseDouble(txtQty.getText())*Double.parseDouble(txtPrice.getText());
 
-        Item m= new Item(txtId.getText(),cmbType.getValue(),Double.parseDouble(txtSize.getText()),Integer.parseInt(txtPrice.getText()),
-                String.valueOf(txtQty.getText()),cmbSupplier.getValue(), Tcost);
-
+        Item m= new Item(txtId.getText(),cmbType.getValue(),Double.parseDouble(txtPrice.getText()),Integer.parseInt(txtQty.getText()),String.valueOf(txtSize.getText()),
+                cmbSupplier.getValue(), Tcost);
+ 
 
 
 

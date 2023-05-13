@@ -41,7 +41,7 @@ public class AppInitializer extends Application {
         delay.setOnFinished( event -> primaryStage.close() );
         delay.play();
         PauseTransition delayLog = new PauseTransition(Duration.seconds(6));
-        delayLog.setOnFinished( event -> logStage.show() );
+           delayLog.setOnFinished( event -> logStage.show() );
         delayLog.play();
 
     }

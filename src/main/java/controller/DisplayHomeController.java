@@ -40,6 +40,16 @@ public class DisplayHomeController {
         type.add("Other");*/
     private void loadClothesPieChart() throws SQLException, ClassNotFoundException {
 
+
+        ObservableList<PieChart.Data> pieChartData = observableArrayList(
+                new PieChart.Data("Pants", 25),
+                new PieChart.Data("Shirt", 20),
+                new PieChart.Data("T-Shirt", 30),
+                new PieChart.Data("Gowns", 10),
+                new PieChart.Data("Other", 15)
+        );
+        clothesPieChart.setData(pieChartData);
+
    /*     Shirt
         T-shirt
         Pants

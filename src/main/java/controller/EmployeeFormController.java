@@ -63,6 +63,8 @@ public class EmployeeFormController implements Initializable, QrPerformance {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        EmployeeAttendanceContext.setTranslateX(1000);
+
         getAllCustomer();
         setTable();addWorkingDay();
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("empId"));
@@ -298,6 +300,20 @@ public class EmployeeFormController implements Initializable, QrPerformance {
 
     public void btnEAttendance(ActionEvent actionEvent) {
 
+
+
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(0.2));
+        slide.setNode(EmployeeAttendanceContext);
+
+        slide.setToX(0);
+        slide.play();
+
+        EmployeeAttendanceContext.setTranslateX(-176);
+        slide.setOnFinished((ActionEvent e)-> {
+
+        });
+
     }
 
     public void btnQrOnACtion(ActionEvent actionEvent) throws IOException {
@@ -362,5 +378,11 @@ public class EmployeeFormController implements Initializable, QrPerformance {
         }else {
             new Alert(Alert.AlertType.INFORMATION,"Failed").show();
         }
+    }
+
+    public void btnEAtteBack(ActionEvent actionEvent) {
+
+        EmployeeAttendanceContext.setTranslateX(1000);
+
     }
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import DB.DbConnection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.animation.Animation;
@@ -347,7 +348,7 @@ public class PaymentFormController {
 
 
             try {
-                JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("../invoice/Dream Bill.jrxml"));
+                JasperDesign design = JRXmlLoader.load("C:\\Users\\SSP'S PC\\JaspersoftWorkspace\\Shalini Fashion\\Shalini Fashion Invoice.jrxml");
                 JasperReport compileReport = JasperCompileManager.compileReport(design);
                // Get all values from table
                 ObservableList<PlaceOrderTm> items1 = tblBilling.getItems();
@@ -360,10 +361,10 @@ public class PaymentFormController {
 
                 //Setting parameter values
                 HashMap map = new HashMap();
-                map.put("OrderId", OrderId);// id= param name of report // customerID= input value of text field
-                map.put("Cost", Cost);
+                map.put("orderId", OrderId);// id= param name of report // customerID= input value of text field
+                map.put("total", Cost);
 
-                JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, map, new JRBeanArrayDataSource(items1.toArray()));
+                JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, map, DbConnection.getInstance().getConnection());
                 JasperViewer.viewReport(jasperPrint, false);
 
                 //if you wanna print the report directly you can use this instead of JasperViewer

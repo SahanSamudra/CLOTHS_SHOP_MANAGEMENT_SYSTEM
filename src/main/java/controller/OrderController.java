@@ -24,15 +24,10 @@ public class OrderController {
             int tempId = Integer.
                     parseInt(rst.getString("oid").split("-")[1]);
             tempId = (tempId + 1);
-            if (tempId < 9) {
-                System.out.println(tempId);
-                return "P-00" + tempId;
-            } else if (tempId < 99) {
-                return "P-0" + tempId;
 
-            } else {
-                return "P-" + tempId;
-            }
+                System.out.println(tempId);
+                return String.format("P-%03d",tempId);
+
         } else {
             return "P-001";
         }
