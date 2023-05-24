@@ -56,7 +56,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="65.0" layoutY="79.0" prefHeight="30.0" prefWidth="138.0" text="Payment ID :">
+      <Label layoutX="29.0" layoutY="79.0" prefHeight="30.0" prefWidth="138.0" text="Payment ID :">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -163,7 +163,7 @@
          </effect></JFXButton>
       <JFXComboBox fx:id="cmbItemCode" labelFloat="true" layoutX="65.0" layoutY="126.0" onAction="#itemSelectOnAction" prefHeight="31.0" prefWidth="169.0" promptText="ItemID" />
       <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="323.0" layoutY="22.0" promptText="Customer ID" unFocusColor="WHITE" visible="false" />
-      <JFXComboBox fx:id="cmbCustomer" layoutX="272.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
+      <JFXComboBox fx:id="cmbCustomer" layoutX="272.0" layoutY="246.0" prefHeight="31.0" prefWidth="169.0" promptText="Customer ID" />
       <Button fx:id="btnAddToCart" layoutX="473.0" layoutY="242.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="39.0" prefWidth="169.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Add to Cart">
          <font>
             <Font name="System Bold Italic" size="15.0" />

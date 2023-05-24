@@ -10,13 +10,24 @@ public class ReturnItemTm {
     private Date date;
     private double price;
 
-    public ReturnItemTm(String id, int qty, String size, String itemId, Date date, double price) {
+    private Date orderId;
+
+    public ReturnItemTm(String id, int qty, String size, String itemId, Date date, double price, Date orderId) {
         this.id = id;
         this.qty = qty;
         this.size = size;
         this.itemId = itemId;
         this.date = date;
         this.price = price;
+        this.orderId = orderId;
+    }
+
+    public Date getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Date orderId) {
+        this.orderId = orderId;
     }
 
     public ReturnItemTm() {

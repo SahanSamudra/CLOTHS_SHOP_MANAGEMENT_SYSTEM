@@ -39,24 +39,73 @@ public class DisplayHomeController {
         type.add("Frock");
         type.add("Other");*/
     private void loadClothesPieChart() throws SQLException, ClassNotFoundException {
+//            PreparedStatement preparedStatement=DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`=?");
+//
+//        ObservableList<PieChart.Data> pieChartData = observableArrayList(
+//                new PieChart.Data("Pants", 25),
+//                new PieChart.Data("Shirt", 20),
+//                new PieChart.Data("T-Shirt", 30),
+//                new PieChart.Data("Gowns", 10),
+//                new PieChart.Data("Other", 15)
+//        );
+//        clothesPieChart.setData(pieChartData);
+//
+//   /*     Shirt
+//        T-shirt
+//        Pants
+//        Gowns
+//        Frock
+//        Other*/
 
+        PreparedStatement prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`=?");
+        prst.setObject(1,"Pants");
+        ResultSet resultSet = prst.executeQuery();
+        int Pants=0;
+        int Shirt=0;
+        int TShirt=0;
+        int Gowns=0;
+        int Other=0;
 
-        ObservableList<PieChart.Data> pieChartData = observableArrayList(
-                new PieChart.Data("Pants", 25),
-                new PieChart.Data("Shirt", 20),
-                new PieChart.Data("T-Shirt", 30),
-                new PieChart.Data("Gowns", 10),
-                new PieChart.Data("Other", 15)
-        );
+        while (resultSet.next()){
+            Pants+=Integer.parseInt(resultSet.getString(4));
+        }
+        prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
+        prst.setObject(1,"Shirt");
+        resultSet = prst.executeQuery();
+        while (resultSet.next()){
+            Shirt+=Integer.parseInt(resultSet.getString(4));
+        }
+
+        prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
+        prst.setObject(1,"T-Shirt");
+        resultSet = prst.executeQuery();
+        while (resultSet.next()){
+            TShirt+=Integer.parseInt(resultSet.getString(4));
+        }
+
+        prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
+        prst.setObject(1,"T-Shirt");
+        resultSet = prst.executeQuery();
+        while (resultSet.next()){
+            Gowns+=Integer.parseInt(resultSet.getString(4));
+        }
+
+        prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
+        prst.setObject(1,"T-Shirt");
+        resultSet = prst.executeQuery();
+        while (resultSet.next()){
+            Other+=Integer.parseInt(resultSet.getString(4));
+        }
+
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Pants", Pants),
+                        new PieChart.Data("T-Shirt", TShirt),
+                        new PieChart.Data("Gowns", Gowns),
+                        new PieChart.Data("Other", Other),
+                        new PieChart.Data("Shirt", Shirt));
+
         clothesPieChart.setData(pieChartData);
-
-   /*     Shirt
-        T-shirt
-        Pants
-        Gowns
-        Frock
-        Other*/
-
 
     }
 

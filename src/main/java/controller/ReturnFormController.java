@@ -24,7 +24,7 @@ public class ReturnFormController {
     public TableView<ReturnItemTm> tblReturn;
     public TableColumn<ReturnItemTm,String> colReturnID;
     public TableColumn<ReturnItemTm,String> colItemCodeR;
-    public TableColumn colBilingDateR;
+    public TableColumn<ReturnItemTm,Date> colBilingDateR;
     public TableColumn<ReturnItemTm,Date> colReturnDate;
     public TableColumn<ReturnItemTm,Double> colPriceReturn;
     public JFXTextField txtSize;
@@ -34,9 +34,10 @@ public class ReturnFormController {
     public JFXDatePicker BillingD;
     public DatePicker dpReturnDate;
     public JFXComboBox<Item> cmbItemId;
+    public JFXTextField txtOrderId;
 
     public void initialize() {
-        setComboBoxData();
+        //setComboBoxData();
         setConverter();
         setCellValueFactory();
         setTable();
@@ -47,6 +48,7 @@ public class ReturnFormController {
         colItemCodeR.setCellValueFactory(new PropertyValueFactory<>("itemId"));
         colReturnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colPriceReturn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        colBilingDateR.setCellValueFactory(new PropertyValueFactory<>("orderId"));
     }
 
     public void setTable(){
@@ -92,6 +94,9 @@ public class ReturnFormController {
     }
 
     public void btnSearchReturn(ActionEvent actionEvent) {
+
+
+
     }
 
     public void btnReturnSave(ActionEvent actionEvent) {
@@ -166,7 +171,18 @@ public class ReturnFormController {
 
     public ReturnItem collectData() {
         Item selectedItem = cmbItemId.getSelectionModel().getSelectedItem();
-        if (selectedItem == null) return new ReturnItem(txtItemId.getText(), 0 ,null , null,null );
-        return new ReturnItem(txtItemId.getText(), Integer.parseInt(txtQty.getText()), txtSize.getText(), selectedItem.getIid(),Date.valueOf(dpReturnDate.getValue()));
+        if (selectedItem == null) return new ReturnItem(txtItemId.getText(), 0 ,null , null,null ,null);
+        return new ReturnItem(txtItemId.getText(), Integer.parseInt(txtQty.getText()), txtSize.getText(), selectedItem.getIid(),Date.valueOf(dpReturnDate.getValue()),txtOrderId.getText());
+    }
+
+    public void txtOrderIdOnAction(ActionEvent actionEvent) {
+        try {
+            ArrayList<Item> allItem = ReturnModel2.getAllByOrderId(txtOrderId.getText());
+            cmbItemId.setItems(FXCollections.observableArrayList(allItem));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

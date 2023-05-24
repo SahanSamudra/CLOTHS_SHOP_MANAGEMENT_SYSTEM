@@ -10,16 +10,26 @@ public class ReturnItem {
 
     private Date date;
 
+    private String orderId;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
     public ReturnItem() {
     }
 
-    public ReturnItem(String id, int qty, String size, String itemId, Date date) {
+    public ReturnItem(String id, int qty, String size, String itemId, Date date, String orderId) {
         this.id = id;
         this.qty = qty;
         this.size = size;
         this.itemId = itemId;
         this.date = date;
+        this.orderId = orderId;
     }
 
     public String getId() {

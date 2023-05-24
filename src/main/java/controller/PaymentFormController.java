@@ -26,6 +26,7 @@ import net.sf.jasperreports.view.JasperViewer;*/
 import model.Order;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
@@ -33,6 +34,7 @@ import org.apache.commons.collections4.Get;
 import tm.PlaceOrderTm;
 import util.ValidationUtil;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -91,7 +93,7 @@ public class PaymentFormController {
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern qtyPattern = Pattern.compile("^[0-9]{1,2}$");
 
-    private void storeValidations(){
+    private void storeValidations() {
         map.put(txtQty, qtyPattern);
 
     }
@@ -99,7 +101,7 @@ public class PaymentFormController {
     int cartSelectedRawRemove = -1;
 
 
-    public void initialize(){
+    public void initialize() {
         lblItemCount.setText("0");
         btnAddToCart.setDisable(true);
         storeValidations();
@@ -112,11 +114,10 @@ public class PaymentFormController {
         colItemTotal.setCellValueFactory(new PropertyValueFactory<>("cost"));
 
 
-
-        cmbCustomer.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) ->{
+        cmbCustomer.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
 
             try {
-                setData(new  CustomerSaveController().getCustomer((String)newValue));
+                setData(new CustomerSaveController().getCustomer((String) newValue));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             } catch (ClassNotFoundException e) {
@@ -126,13 +127,10 @@ public class PaymentFormController {
         }));/////////
 
 
-
-
-
-        cmbItemCode.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) ->{
+        cmbItemCode.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
 
             try {
-                setData(new  ItemSaveController().getItems((String)newValue));
+                setData(new ItemSaveController().getItems((String) newValue));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             } catch (ClassNotFoundException e) {
@@ -165,7 +163,7 @@ public class PaymentFormController {
 
         tblBilling.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
 
-            cartSelectedRawRemove= (int) newValue;
+            cartSelectedRawRemove = (int) newValue;
         });
 
     }
@@ -187,7 +185,7 @@ public class PaymentFormController {
 
 
     public void loadCusIDs() throws SQLException, ClassNotFoundException {
-        List<String> cusids=new CustomerSaveController().getCusIDs();
+        List<String> cusids = new CustomerSaveController().getCusIDs();
         cmbCustomer.getItems().addAll(cusids);
 
     }
@@ -197,16 +195,14 @@ public class PaymentFormController {
         txtCustomerID.setText(cc1.getCustomerId());
 
 
-
     }
 
 
     public void loadItemIds() throws SQLException, ClassNotFoundException {
-        List<String> itemIds=new ItemSaveController().getItemIds();
+        List<String> itemIds = new ItemSaveController().getItemIds();
         cmbItemCode.getItems().addAll(itemIds);
 
     }
-
 
 
     private void setData(Item mm1) {
@@ -217,12 +213,12 @@ public class PaymentFormController {
         txtQtyOnHand.setText(String.valueOf(mm1.getQty()));
 
 
-
     }
-    private void setOrderId(){
+
+    private void setOrderId() {
 
         try {
-            lblOrderId.setText(new  OrderController().getOrderId());
+            lblOrderId.setText(new OrderController().getOrderId());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -231,25 +227,24 @@ public class PaymentFormController {
     }
 
 
+    ObservableList<PlaceOrderTm> oblist = FXCollections.observableArrayList();
 
-    ObservableList<PlaceOrderTm> oblist =FXCollections.observableArrayList();
     public void btnAddToCart(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String ItemType = txtItemType.getText();
         String ItemSize = txtSize.getText();
         int QtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
         int QtyForCustomer = Integer.parseInt(txtQty.getText());
-        lblItemCount.setText(String.valueOf(Integer.parseInt(lblItemCount.getText())+QtyForCustomer));
-        double UnitPrice =Double.parseDouble(txtPrice.getText());
+        lblItemCount.setText(String.valueOf(Integer.parseInt(lblItemCount.getText()) + QtyForCustomer));
+        double UnitPrice = Double.parseDouble(txtPrice.getText());
         double Total = QtyForCustomer * UnitPrice;
 
-        if (QtyOnHand<QtyForCustomer){
-            new Alert(Alert.AlertType.WARNING,"Invalid Qty").show();
+        if (QtyOnHand < QtyForCustomer) {
+            new Alert(Alert.AlertType.WARNING, "Invalid Qty").show();
             return;
         }
 
 
-
-        PlaceOrderTm tm= new PlaceOrderTm((String) cmbItemCode.getValue(),
+        PlaceOrderTm tm = new PlaceOrderTm((String) cmbItemCode.getValue(),
                 ItemType,
                 ItemSize,
                 QtyForCustomer,
@@ -258,21 +253,21 @@ public class PaymentFormController {
 
         );
 
-        int rowNumber=isExists(tm);
+        int rowNumber = isExists(tm);
 
-        if (rowNumber==-1){
+        if (rowNumber == -1) {
             oblist.add(tm);
 
-        }else {
+        } else {
             PlaceOrderTm temp = oblist.get(rowNumber);
             PlaceOrderTm newTm = new PlaceOrderTm(
-                    temp.getCode(),temp.getType(),
-                    temp.getSize(),temp.getQty()+QtyForCustomer,
-                    UnitPrice,Total+temp.getCost()
+                    temp.getCode(), temp.getType(),
+                    temp.getSize(), temp.getQty() + QtyForCustomer,
+                    UnitPrice, Total + temp.getCost()
             );
 
-            if (QtyOnHand<temp.getQty()){
-                new Alert(Alert.AlertType.WARNING,"Invalid Qty").show();
+            if (QtyOnHand < temp.getQty()) {
+                new Alert(Alert.AlertType.WARNING, "Invalid Qty").show();
                 return;
             }
 
@@ -285,10 +280,10 @@ public class PaymentFormController {
     }
 
 
-    private int isExists(PlaceOrderTm tm){
+    private int isExists(PlaceOrderTm tm) {
 
-        for (int i = 0; i < oblist.size() ; i++) {
-            if (tm.getCode().equals(oblist.get(i).getCode())){
+        for (int i = 0; i < oblist.size(); i++) {
+            if (tm.getCode().equals(oblist.get(i).getCode())) {
                 return i;
             }
         }
@@ -296,22 +291,22 @@ public class PaymentFormController {
         return -1;
     }
 
-    void calculateCost(){
+    void calculateCost() {
 
-        double ttl=0;
-        for (PlaceOrderTm tm:oblist
+        double ttl = 0;
+        for (PlaceOrderTm tm : oblist
         ) {
-            ttl+=  tm.getCost();
+            ttl += tm.getCost();
         }
-        lblFinalTotal.setText(ttl+"  /=");
+        lblFinalTotal.setText(ttl + "  /=");
     }
 
 
     public void btnClear(ActionEvent actionEvent) {
 
-        if (cartSelectedRawRemove==-1){
-            new Alert(Alert.AlertType.WARNING,"Please Select Row").show();
-        }else {
+        if (cartSelectedRawRemove == -1) {
+            new Alert(Alert.AlertType.WARNING, "Please Select Row").show();
+        } else {
             oblist.remove(cartSelectedRawRemove);
             calculateCost();
             tblBilling.refresh();
@@ -320,21 +315,20 @@ public class PaymentFormController {
 
     public void btnPlaceOrder(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        ArrayList<ItemReports> items= new ArrayList<>();
-        double total=0;
-        for (PlaceOrderTm tempTm:oblist
+        ArrayList<ItemReports> items = new ArrayList<>();
+        double total = 0;
+        for (PlaceOrderTm tempTm : oblist
         ) {
 
-            total+=tempTm.getCost();
-            items.add(new ItemReports(tempTm.getCode(),tempTm.getPrice(),
-                    tempTm.getQty(),tempTm.getCost(),lblDate.getText())
-
+            total += tempTm.getCost();
+            items.add(new ItemReports(tempTm.getCode(), tempTm.getPrice(),
+                    tempTm.getQty(), tempTm.getCost(), lblDate.getText())
 
 
             );
 
         }
-        Order order =new Order(
+        Order order = new Order(
                 lblOrderId.getText(),
                 txtCustomerID.getText(),
                 lblDate.getText(),
@@ -342,13 +336,47 @@ public class PaymentFormController {
                 total,
                 items
         );
-        if (new OrderController().placeOrder(order)){
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("orderId",lblOrderId.getText());
+        hm.put("total",String.valueOf(total)+"0");
+        if (new OrderController().placeOrder(order)) {
+
+            new Thread() {
+                @Override
+                public void run() {
+                    JasperDesign load = null;
+                    try {
+                        load = JRXmlLoader.load(new File("D:\\IJSE\\CLOTHS_SHOP_MANAGEMENT_SYSTEM\\src\\main\\resources\\reports\\Invoice.jrxml"));
+
+                        JRDesignQuery newQuery = new JRDesignQuery();
+                        String sql = "select ir.itemCode as code , ir.unitprice as price ,\n" +
+                                "ir.itemcount as qty\n" +
+                                ", ir.total as subTotal from item_reports ir " + "where oid = '" + lblOrderId.getText() + "'";
+                        newQuery.setText(sql);
+                        load.setQuery(newQuery);
+                        JasperReport js = JasperCompileManager.compileReport(load);
+                        JasperPrint jp = JasperFillManager.fillReport(js, hm, DbConnection.getInstance().getConnection());
+                        JasperViewer viewer = new JasperViewer(jp, false);
+                        viewer.show();
+
+                    } catch (JRException | SQLException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }.start();
+        }
 
 
 
 
-            try {
-                JasperDesign design = JRXmlLoader.load("C:\\Users\\SSP'S PC\\JaspersoftWorkspace\\Shalini Fashion\\Shalini Fashion Invoice.jrxml");
+
+
+
+
+            /*try {
+                JasperDesign design = JRXmlLoader.load("D:\\IJSE\\CLOTHS_SHOP_MANAGEMENT_SYSTEM\\src\\main\\java\\invoice\\Dream Bill.jrxml");
                 JasperReport compileReport = JasperCompileManager.compileReport(design);
                // Get all values from table
                 ObservableList<PlaceOrderTm> items1 = tblBilling.getItems();
@@ -376,11 +404,11 @@ public class PaymentFormController {
 
         }else {
             new Alert(Alert.AlertType.WARNING,"Try Again").show();
-        }
+        }*/
     }
 
     public void KeyPress(KeyEvent keyEvent) {
-        Object response = ValidationUtil.validate(map,btnAddToCart);
+        Object response = ValidationUtil.validate(map, btnAddToCart);
 
         if (keyEvent.getCode() == KeyCode.ENTER) {
             if (response instanceof JFXTextField) {

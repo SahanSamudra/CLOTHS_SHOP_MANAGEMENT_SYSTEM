@@ -46,8 +46,8 @@
       </TableView>
       <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="35.0" layoutY="244.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Size" />
       <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="35.0" layoutY="181.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Qty" />
-      <JFXTextField fx:id="txtItemId" labelFloat="true" layoutX="35.0" layoutY="129.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Return ID" />
-      <JFXButton layoutX="334.0" layoutY="129.0" onAction="#btnSearchReturn" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
+      <JFXTextField fx:id="txtOrderId" labelFloat="true" layoutX="30.0" layoutY="80.0" onAction="#txtOrderIdOnAction" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Order Id" />
+      <JFXButton layoutX="335.0" layoutY="153.0" onAction="#btnSearchReturn" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -103,5 +103,6 @@
          </styleClass>
       </Button>
       <DatePicker fx:id="dpReturnDate" layoutX="553.0" layoutY="181.0" prefHeight="31.0" prefWidth="291.0" stylesheets="@../styles/styles.css" />
+      <JFXTextField fx:id="txtItemId" labelFloat="true" layoutX="30.0" layoutY="137.0" onKeyPressed="#txtKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Return ID" />
    </children>
 </AnchorPane>

@@ -473,6 +473,7 @@
 .table-view .column-header{
     -fx-size:40px;
     -fx-background-color: #7708f5;
+
 }
 
 .table-view .column-header .label{
@@ -569,4 +570,33 @@ Customize left and right arrow
 .date-picker-popup .spinner .button .left-arrow,
 .date-picker-popup .spinner .button .right-arrow {
     -fx-background-color: #c2d70e;
+}
+
+
+
+
+
+
+.table-view{
+    -fx-background-radius: 15;
+    -fx-background-color: transparent;
+    -fx-border-radius: 2;
+    -fx-border-color: transparent;
+}
+
+/*.table-view:focused{*/
+/*    -fx-background-color: rgba(0, 0, 0, 0.24);*/
+/*}*/
+
+/* Spaltenköpfe
+    Struktur column-header-background -> column-header */
+
+.table-view .column-header-background{
+    -fx-background-color: #d90429;
+    -fx-background-radius: 15px;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
 }

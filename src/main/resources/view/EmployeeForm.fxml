@@ -94,6 +94,20 @@
          </styleClass>
       </Button>
       <JFXTextField fx:id="txtEName" labelFloat="true" layoutX="569.0" layoutY="96.0" onKeyReleased="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Name" />
+      <JFXButton layoutX="357.0" layoutY="96.0" onAction="#btnSearch" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn-Search" />
+            <String fx:value="button-" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="360.0" layoutY="11.0" onAction="#btnEAttendance" prefHeight="39.0" prefWidth="179.0" style="-fx-background-color: #95a5a6;" styleClass="button2" stylesheets="@../styles/styles.css" text="Employee Attendance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
       <AnchorPane fx:id="EmployeeAttendanceContext" focusTraversable="true" layoutX="49.0" layoutY="30.0" prefHeight="531.0" prefWidth="800.0" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css">
          <children>
             <Label layoutX="10.0" layoutY="10.0" prefHeight="511.0" prefWidth="780.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../../../../../../Mobile-Shop-master/src/style/styles.css" />
@@ -126,13 +140,12 @@
                </font>
             </Label>
             <Button layoutX="506.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnQrOnACtion" prefHeight="154.0" prefWidth="148.0" text="QR" />
-            <Button layoutX="431.0" layoutY="479.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
+            <Button layoutX="431.0" layoutY="479.0" mnemonicParsing="false" onAction="#btnSaveOnAction" styleClass="btn-Save" stylesheets="@../styles/styles.css" text="Save" />
          </children>
          <styleClass>
             <String fx:value="dashboard-colour2" />
             <String fx:value="button-" />
          </styleClass>
       </AnchorPane>
-      <JFXButton layoutX="287.0" layoutY="15.0" onAction="#btnEAttendance" prefHeight="31.0" prefWidth="129.0" text="EA" />
    </children>
 </AnchorPane>
