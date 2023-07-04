@@ -129,4 +129,31 @@ create table returnItem(
     CONSTRAINT PRIMARY KEY(id),
     CONSTRAINT FOREIGN KEY(item_id) REFERENCES Item(Iid) ON DELETE CASCADE ON UPDATE CASCADE
 
-)
+);
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer
+(
+    cid     VARCHAR(10) NOT NULL,
+    name    VARCHAR(45),
+    address VARCHAR(75),
+    contact VARCHAR(12),
+    CONSTRAINT PRIMARY KEY (cid)
+    );
+SHOW TABLES;
+DESCRIBE Customer;
+
+ alter table returnitem ADD Column date DATE;
+CREATE TABLE working_day(id VARCHAR(10) primary key,date DATE);
+
+
+CREATE TABLE attendence(
+	employee_id varchar(10),
+	day_id VARCHAR(10),
+	time TIME,
+	status ENUM('Y','N'),
+	CONSTRAINT PRIMARY KEY(employee_id,day_id),
+	FOREIGN KEY(employee_id) REFERENCES employee(eId) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY(day_id) REFERENCES working_day(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+alter table returnitem add column o_id VARCHAR(10);

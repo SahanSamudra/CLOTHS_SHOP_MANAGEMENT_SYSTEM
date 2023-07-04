@@ -6,6 +6,8 @@ public class Customer {
     private String customerAddress;
     private String noOfContact;
 
+
+
     public Customer() {
     }
 

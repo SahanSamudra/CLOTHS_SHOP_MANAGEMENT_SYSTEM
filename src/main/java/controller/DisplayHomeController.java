@@ -65,6 +65,7 @@ public class DisplayHomeController {
         int TShirt=0;
         int Gowns=0;
         int Other=0;
+        int Frock=0;
 
         while (resultSet.next()){
             Pants+=Integer.parseInt(resultSet.getString(4));
@@ -84,14 +85,20 @@ public class DisplayHomeController {
         }
 
         prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
-        prst.setObject(1,"T-Shirt");
+        prst.setObject(1,"Gowns");
         resultSet = prst.executeQuery();
         while (resultSet.next()){
             Gowns+=Integer.parseInt(resultSet.getString(4));
         }
 
         prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
-        prst.setObject(1,"T-Shirt");
+        prst.setObject(1,"Other");
+        resultSet = prst.executeQuery();
+        while (resultSet.next()){
+            Other+=Integer.parseInt(resultSet.getString(4));
+        }
+        prst = DbConnection.getInstance().getConnection().prepareStatement("select * from Item WHERE `type`= ?");
+        prst.setObject(1,"Frock");
         resultSet = prst.executeQuery();
         while (resultSet.next()){
             Other+=Integer.parseInt(resultSet.getString(4));
@@ -100,10 +107,12 @@ public class DisplayHomeController {
         ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableArrayList(
                         new PieChart.Data("Pants", Pants),
+                        new PieChart.Data("Shirt", Shirt),
                         new PieChart.Data("T-Shirt", TShirt),
                         new PieChart.Data("Gowns", Gowns),
                         new PieChart.Data("Other", Other),
-                        new PieChart.Data("Shirt", Shirt));
+
+                        new PieChart.Data("Frock",Frock));
 
         clothesPieChart.setData(pieChartData);
 

@@ -42,7 +42,7 @@ public class CustomerFormController {
     Pattern idPattern = Pattern.compile("^(C)[0-9]{1,3}$");
     Pattern namePattern = Pattern.compile("^[A-z ]{3,40}$");
     Pattern contactPattern = Pattern.compile("^(071|072|073|074|070|075|076|077|078|079)[-]?[0-9]{7}$");
-    Pattern addressPattern = Pattern.compile("^[A-z0-9/ ]{3,30}$");
+    Pattern addressPattern = Pattern.compile("^[A-z0-9/ ]{3,50}$");
 
     private void storeValidations() {
         map.put(txtCustomerId, idPattern);
@@ -61,21 +61,23 @@ public class CustomerFormController {
         colCusAddress.setCellValueFactory(new PropertyValueFactory<>("customerAddress"));
 
 
-
         try {
             loadCustomers(new CustomerSaveController().getAllCustomer());
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
 
-
     public void btnCustomerSave(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        Customer c1 = new Customer(txtCustomerId.getText(),
+        Customer c1 = new Customer(
+
+
+
+                txtCustomerId.getText(),
                 txtCusName.getText(),
                 txtCusContact.getText(),
                 txtCusAddress.getText()
@@ -95,10 +97,13 @@ public class CustomerFormController {
     }
 
     public void loadCustomers(ArrayList<Customer> customers) {
+
         ObservableList<CustomerTm> observableList = FXCollections.observableArrayList();
         customers.forEach(c -> {
+
             observableList.add(new CustomerTm(c.getCustomerId(), c.getCustomerName(), c.getCustomerAddress(), c.getNoOfContact()));
             tblCustomers.setItems(observableList);
+
         });
 
     }

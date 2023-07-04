@@ -6,9 +6,13 @@ import model.ReturnItem;
 import tm.ReturnItemTm;
 import util.CrudUtil;
 
+import javax.swing.text.DateFormatter;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ReturnModel2 {
@@ -64,7 +68,7 @@ public class ReturnModel2 {
         ArrayList<ReturnItemTm> list = new ArrayList<>();
         while (rs.next()){
             list.add(new ReturnItemTm(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),
-                    rs.getDate(5),rs.getDouble(6),rs.getDate(7)));
+                    rs.getDate(5),rs.getDouble(6), Date.valueOf(LocalDate.parse(rs.getString(7), DateTimeFormatter.ofPattern("dd-MM-yyyy")))));
         }
 
         return list;
@@ -77,7 +81,7 @@ public class ReturnModel2 {
     public static ArrayList<Item> getAllByOrderId(String orderId)throws SQLException, ClassNotFoundException {
         PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("select i.Iid,i.type," +
                 "i.price,i.qty,i.size,i.supplier,i.tcost from item i inner join item_reports ir on i.Iid = ir.itemcode " +
-                "where ir.oid = 'P-009'");
+                "where ir.oid = '"+orderId+"'");
         ResultSet rst = stm.executeQuery();
         ArrayList<Item> items = new ArrayList<>();
         while (rst.next()) {

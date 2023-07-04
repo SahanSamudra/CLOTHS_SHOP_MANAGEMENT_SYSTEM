@@ -1,5 +1,6 @@
 package controller;
 
+import DB.DbConnection;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,9 +12,14 @@ import javafx.scene.input.KeyEvent;
 /*import model.Accessories;*/
 import javafx.scene.layout.AnchorPane;
 import model.Supplier;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import tm.SupplierTm;
 import util.ValidationUtil;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -197,5 +203,29 @@ public class SupplierController {
     }
 
 
+    public void btnPrint(ActionEvent actionEvent) {
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    JasperDesign load = JRXmlLoader.load(new File("D:\\IJSE\\CLOTHS_SHOP_MANAGEMENT_SYSTEM\\src\\main\\java\\invoice\\Supplier_all_form.jrxml"));
 
+                    JasperReport js = JasperCompileManager.compileReport(load);
+
+                    JasperPrint jp = JasperFillManager.fillReport(js, null, DbConnection.getInstance().getConnection());
+
+                    JasperViewer viewer = new JasperViewer(jp , false);
+                    viewer.show();
+
+                } catch (JRException e) {
+                    e.printStackTrace();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                this.stop();
+            }
+        }.start();
+    }
 }

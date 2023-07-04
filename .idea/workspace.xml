@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="Update.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ebda2243-0bc1-4c82-b025-8568cca558e0" name="Changes" comment="All CRUD and Transaction Done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DisplayHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DisplayHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PaymentFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemSaveController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReturnFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReturnItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/WorkingDayModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/WorkingDayModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/model2/ReturnModel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/model2/ReturnModel2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tm/ReturnItemTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tm/ReturnItemTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ReturnForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ReturnForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/newDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/newDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,23 +51,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\reports" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java\invoice" />
+      <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\resources\reports" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\java" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\lib" />
       <recent name="D:\IJSE\CLOTHS_SHOP_MANAGEMENT_SYSTEM\src\main\lib\cam" />
@@ -196,6 +183,8 @@
       <workItem from="1684763573593" duration="111000" />
       <workItem from="1684763709161" duration="390000" />
       <workItem from="1684815386784" duration="2896000" />
+      <workItem from="1686834217591" duration="61000" />
+      <workItem from="1688306655097" duration="734000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <created>1680499952236</created>
@@ -316,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683954661443</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="All CRUD and Transaction Done.">
+      <created>1684900370637</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684900370638</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +343,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Create Loading Progress And Updated." />
     <MESSAGE value="Update." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update." />
+    <MESSAGE value="All CRUD and Transaction Done." />
+    <option name="LAST_COMMIT_MESSAGE" value="All CRUD and Transaction Done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

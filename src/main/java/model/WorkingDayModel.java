@@ -21,6 +21,7 @@ public class WorkingDayModel {
     }
 
     public static boolean addWorkingDay(ArrayList<AttendanceTo> attendance) throws SQLException, ClassNotFoundException {
+        if(attendance.size()<1)return false;
         DbConnection.getInstance().getConnection().setAutoCommit(false);
         try {
             boolean b = CrudUtil.execute("insert into working_day VALUES(?,?)", attendance.get(0).getDayId(), LocalDate.now());

@@ -102,8 +102,8 @@ public class ReturnFormController {
     public void btnReturnSave(ActionEvent actionEvent) {
         ReturnItem returnItem = collectData();
         Item selectedItem = cmbItemId.getSelectionModel().getSelectedItem();
-        selectedItem.setQty(selectedItem.getQty()-Integer.parseInt(txtQty.getText()));
         if(selectedItem==null)return;
+        selectedItem.setQty(selectedItem.getQty()-Integer.parseInt(txtQty.getText()));
         if (returnItem != null) {
             try {
                 boolean b = ReturnModel2.addData(returnItem,selectedItem);
@@ -176,8 +176,13 @@ public class ReturnFormController {
     }
 
     public void txtOrderIdOnAction(ActionEvent actionEvent) {
+        System.out.println("called");
         try {
             ArrayList<Item> allItem = ReturnModel2.getAllByOrderId(txtOrderId.getText());
+            for (Item ob:allItem
+                 ) {
+                System.out.println(ob.getIid());
+            }
             cmbItemId.setItems(FXCollections.observableArrayList(allItem));
         } catch (SQLException e) {
             throw new RuntimeException(e);

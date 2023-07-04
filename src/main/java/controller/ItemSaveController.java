@@ -55,14 +55,14 @@ public class ItemSaveController {
 
         PreparedStatement Stm= DbConnection.getInstance().getConnection().prepareStatement("UPDATE Item SET   type=?, price=?, qty=?, size=?, supplier=?, tcost=? WHERE Iid=? ");
 
-        Stm.setObject(1,M.getIid());
-        Stm.setObject(2,M.getType());
-        Stm.setObject(3,M.getSize());
-        Stm.setObject(4,M.getPrice());
-        Stm.setObject(5,M.getQty());
-        Stm.setObject(6,M.getSupplier());
-        Stm.setObject(7,M.getTcost());
 
+        Stm.setObject(1,M.getType());
+        Stm.setObject(2,M.getPrice());
+        Stm.setObject(3,M.getQty());
+        Stm.setObject(4,M.getSize());
+        Stm.setObject(5,M.getSupplier());
+        Stm.setObject(6,M.getTcost());
+        Stm.setObject(7,M.getIid());
 
 
         return Stm.executeUpdate()>0;
@@ -94,7 +94,4 @@ public class ItemSaveController {
             return null;
         }
     }
-
-
-
 }

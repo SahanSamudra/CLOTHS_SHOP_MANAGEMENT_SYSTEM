@@ -103,5 +103,10 @@
          </styleClass>
       </Button>
       <JFXTextField fx:id="txtSCompany" labelFloat="true" layoutX="569.0" layoutY="96.0" onKeyReleased="#SupKeyPress" prefHeight="31.0" prefWidth="291.0" promptText="Company" />
+      <JFXButton buttonType="RAISED" layoutX="331.0" layoutY="17.0" onAction="#btnPrint" prefHeight="39.0" prefWidth="179.0" style="-fx-background-color: #95a5a6;" styleClass="button2" stylesheets="@../styles/styles.css" text="Print Supplier Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
